@@ -1,5 +1,7 @@
 # M2107-PT : Jeu d’échecs
 
+![](https://www.latoutmaitre.com/wp-content/uploads/2017/11/bandeau-6000x1830.jpg)
+
 **IMPORTANT :** Ce projet n'est pas qu'un projet de programmation : c'est un projet de programmation, de conception en UML et de gestion de projets. Les trois aspects seront évalués et seul un projet satisfaisant aux critères de qualité des trois disciplines pourra prétendre à une évaluation favorable.
 
 ## Roundtrip engineering
