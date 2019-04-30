@@ -8,6 +8,11 @@ public class Roi  extends Piece {
 		this.forme="";
 	}
 	
+	public Roi(int ligne, char colonne, String coul) {
+		super(ligne,colonne,coul);
+		this.forme="";
+	}
+
 	public void déplacerPiece() {
 		
 	}

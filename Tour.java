@@ -6,6 +6,12 @@ public class Tour extends Piece {
 		super();
 		this.forme="";
 	}
+
+	public Tour(int ligne, char colonne, String coul) {
+		super(ligne,colonne,coul);
+		this.forme="";
+	}
+
 	public void déplacerPiece() {
 		
 	}
