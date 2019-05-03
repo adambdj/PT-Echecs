@@ -1,13 +1,21 @@
 public class Case
 {
-	private String positionCase; // position de la case ex : 1A
+	private int x; // position x
+  	private int y; // position y
   	private boolean caseLibre; // return true si la case est libre sinon false
   	private Piece p; // case peut etre compose de piece
   	
   	public Case()
     {
-    	this.positionCase = "";
       	this.caseLibre = true; // true (case libre)   false (case occupé)
+    }
+  	
+	public Case(int x, int y, Piece p)
+    {
+      	this.x = x;
+      	this.y = y;
+     	this.caseLibre = true;
+     	this.p = p;
     }
   
   	/* GETTER */
@@ -40,8 +48,31 @@ public class Case
       	if(caseL == true) 
           this.p = null;
     }
+  
+  	/* GETTER */
   	
-  	/*	VERIFIE SI LA POSITION DE LA CASE EST VALIDE */
+  	public int getPosX()
+  	{
+  		return this.x;
+ 	}
+  
+ 	public int getPosY()
+ 	{
+  		return this.y;
+  	} 
+  
+  	/* SETTER */
+    public void setPosX(int x)
+    {
+      this.x = x;
+    }
+
+    public void setPosY(int y)
+    {
+      this.y = y;
+    }
+  	
+  	/*	---------------------------------------- VERIFIE SI LA POSITION DE LA CASE EST VALIDE ------------------- 
   
   	public boolean positionValide()
     {
@@ -59,6 +90,6 @@ public class Case
       }
  	  return p;
     }   
-  	
+  		---------------------------------------------------------------------------------------------------------	*/
   
 }
