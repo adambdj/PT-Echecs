@@ -79,9 +79,9 @@ public class Case
       this.y = y;
     }
   	
-  	/*	---------------------------------------- VERIFIE SI LA POSITION DE LA CASE EST VALIDE ------------------- 
+  	/*	---------------------------------------- VERIFIE SI LA SAISIE DE LA CASE EST VALIDE ------------------- 
   
-  	public boolean positionValide()
+  	public boolean saisieValide()
     {
       char[] tabChar = {"A","B","C","D","E","F","G","H"};
       boolean t = false;
