@@ -6,43 +6,43 @@ public class Case
   	private Piece p; // case peut etre compose de piece
   	
   	public Case()
-    {
-      	this.caseLibre = true; // true (case libre)   false (case occupé)
-    }
+   	{
+      		this.caseLibre = true; // true (case libre)   false (case occupé)
+   	}
   	
 	public Case(int x, int y, Piece p)
-    {
-      	this.x = x;
-      	this.y = y;
-     	this.caseLibre = true;
-     	this.p = p;
-    }
+    	{
+      		this.x = x;
+      		this.y = y;
+     		this.caseLibre = true;
+     		this.p = p;
+    	}
   
   	/* GETTER */
   
   	public Piece getPiece()
-    {
+    	{
 		return this.p;
-    }
+    	}
   
   	/*	MET UNE PIECE DANS LA CASE */
   
   	public void setPiece(Piece piece)
-    {
-    	this.p = piece;	// met la piece dans la case
-      	this.caseLibre = false;	// dit que la case n'est plus libre 
-    }
+    	{
+    		this.p = piece;	// met la piece dans la case
+      		this.caseLibre = false;	// dit que la case n'est plus libre 
+    	}
  	
   	/*  GETTER  RETURN L'ETAT DE LA CASE */
   
   	public boolean getCaseLibre()
-    {
-    	return this.caseLibre;
-    }
+    	{
+    		return this.caseLibre;
+    	}
   
   	/*	 ON VIDE LA CASE */
   
-  	public void setCaseLibre(boolean caseL)
+    public void setCaseLibre(boolean caseL)
     {
     	this.caseLibre = caseL;
       	if(caseL == true) 
