@@ -9,6 +9,13 @@ public class Case
    	{
       		this.caseLibre = true; // true (case libre)   false (case occupé)
    	}
+	
+	public Case(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+     		this.caseLibre = true;
+	}
   	
 	public Case(int x, int y, Piece p)
     	{
