@@ -17,7 +17,7 @@ public abstract class Piece
   {
   	this.couleur = c;
     this.etatPiece = true; // true(piece en jeu) false(piece detruite)
-	this.x = x;
+	  this.x = x;
     this.y = y;
   }
   
