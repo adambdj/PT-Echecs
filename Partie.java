@@ -1,7 +1,7 @@
 //Ce qu'on peux faire pendant une partie
-
+//une partie est composé d'un echiquier
 public class Partie {
-	private Echequier terrain; //Une Partie est composé d'un Echequier
+	private Echiquier terrain; //Une Partie est composé d'un Echequier
 	
 	public Partie() {
 		this.terrain=new Echequier();
@@ -25,19 +25,19 @@ public class Partie {
 		{
 			//Si il n'y a personne devant moi ou a coté et si la case désigné est une caseVide : True 
 		}
-		if(p instanceof Roi) //Si la piece est un Roi
+		else if(p instanceof Roi) //Si la piece est un Roi
 		{
 			//Si il n'y a personne devant ou a droite ou a gauche ou derierre : True
 		}
-		if(p instanceof Reine) //Si la piece est une Reine
+		else if(p instanceof Reine) //Si la piece est une Reine
 		{
 			//Pareil que le roi et si la case désigné = caseVide : True
 		}
-		if(p instanceof Fou) //Si la piece est un fou
+		else if(p instanceof Fou) //Si la piece est un fou
 		{
 			//Si il n'y a personne dur ma diagonale et si la case désigné et une caseVide : True
 		}
-		if(p instanceof Cavalier) //Si la piece est un Cavalier
+		else if(p instanceof Cavalier) //Si la piece est un Cavalier
 		{
 			/* Vérifie tout les points en L :
 				si on prend la piece a déplacer comme orgine on a (i,j) (abscisse,ordonné) :
@@ -56,8 +56,14 @@ public class Partie {
 			*/
 				
 		}
+		else // p est un pion 
+		{
+			if (this.terrain.etatCase(p.getPosX(),p.getPosY()+1) == true)
+				reponse=true;
+		}
 			
 		return reponse;
+		
 	}
 	
 //-------------------

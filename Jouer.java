@@ -7,6 +7,7 @@ public class Jouer
 
 
 
+
     /*
    		Comment se déroule une partie ? 
 	-> On lance la partie (fonction : lancer Partie)
@@ -25,6 +26,12 @@ public class Jouer
 	
 			false : déplacement impossible !
 				return en haut de la boucle
+
+		->voulez-vous quitter la partie ?
+		apelle fonction : saisie return non - on continue
+			oui - apelle fonction : sauvegarderPartie return 
+			sauvegarder partie apl verifMAT/PAT if True alors return False ON NE PEUX PAS SAUVEGARDER
+			Sinon on sauvegarde car partie non null ni FINI 
    */
 }
 
