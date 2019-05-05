@@ -58,7 +58,7 @@ public class Partie {
 		}
 		else // p est un pion 
 		{
-			if (this.terrain.etatCase(p.getPosX(),p.getPosY()+1) == true)
+			if (this.terrain.etatCase(p.getPosX(),p.getPosY()+1))
 				reponse=true;
 		}
 			
