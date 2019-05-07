@@ -2,6 +2,9 @@
 //une partie est composé d'un echiquier
 public class Partie {
 	private Echiquier terrain; //Une Partie est composé d'un Echequier
+	private Joueur joueur1;
+	private Joueur joueur2;
+
 	
 	public Partie() {
 		this.terrain=new Echequier();
@@ -67,6 +70,32 @@ public class Partie {
 	}
 	
 //-------------------
+
+
+	public void lancerPartie(){
+
+	}
+
+	public void sauvegarderPartie(){
+
+	}
+
+	public void restaurerPartie(){
+
+	}
+
+	public void effacerTerrain(){
+
+	}
+
+	public void historique(){
+
+	}
+
+	public void tourDeJeu(){
+		
+	}
+
 	public Echequier getTerrain() {
 		return terrain;
 	}
