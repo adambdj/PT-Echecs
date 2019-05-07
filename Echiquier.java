@@ -23,7 +23,8 @@ public class Echiquier
   /* setCase() */
   public void setCase(int x, int y, Piece p)
   {
-  
+    if(this.etatCase(x,y))
+      this.grille[i][j] = p;
   }
   /* GETTER */
   public Case[][] getGrille(){
