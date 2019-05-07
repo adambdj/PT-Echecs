@@ -1,18 +1,21 @@
-
-public class Reine extends Piece {
+public class Reine extends Piece
+{
 	private String forme;
 	
-	public Reine() {
+	public Reine()
+	{
 		super();
 		this.forme="";
 	}
 	
-	public Reine(int ligne, char colonne, String coul) {
+	public Reine(int ligne, char colonne, String coul)
+	{
 		super(ligne,colonne,coul);
 		this.forme="";
 	}
 
-	public void déplacerPiece() {
-		
+	public void déplacerPiece()
+	{
 	}
+	
 }
