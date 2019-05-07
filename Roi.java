@@ -1,19 +1,22 @@
-
-public class Roi  extends Piece {
+public class Roi  extends Piece
+{
 	
 	private String forme;
 	
-	public Roi() {
+	public Roi()
+	{
 		super();
 		this.forme="";
 	}
 	
-	public Roi(int ligne, char colonne, String coul) {
+	public Roi(int ligne, char colonne, String coul)
+	{
 		super(ligne,colonne,coul);
 		this.forme="";
 	}
 
-	public void déplacerPiece() {
-		
+	public void déplacerPiece()
+	{
 	}
+	
 }
