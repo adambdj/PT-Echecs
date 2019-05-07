@@ -15,7 +15,6 @@ public class Case
     	{
       		this.x = x;
       		this.y = y;
-     		this.caseLibre = true;
      		this.p = p;  // sinon par exemple je fais des if(p instanceof cavalier)
     	}
   
