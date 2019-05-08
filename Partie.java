@@ -65,8 +65,10 @@ public class Partie
 		}
 		else // p est un pion 
 		{
-			if (this.terrain.etatCase(p.getPosX(),p.getPosY()+1))
-				reponse=true;
+			//Si la case de devant+1 est libre ou la case devant+2 est libre 
+			if(this.terrain.etatCase(this.terrain.getCase(p.getPosX(), p.getPosY()+1)) || 
+					this.terrain.etatCase(this.terrain.getCase(p.getPosX(), p.getPosY()+2)) ) 
+				reponse = true;
 		}
 			
 		return reponse;

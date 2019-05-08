@@ -1,14 +1,8 @@
 public class Pion  extends Piece
 {
 	private String forme;
-	
-	public Pion()
-	{
-		super();
-		this.forme="";
-	}
-	
-	public Pion(int ligne, char colonne, String coul)
+
+	public Pion(int ligne, char colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		this.forme="";

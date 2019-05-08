@@ -9,7 +9,7 @@ public class Echiquier
 	/* Initialise le tableau */
 	public void intialiser()
 	{
-		for(int i = 0; i < 8, i++)
+		for(int i = 0; i < 8; i++)
 		{
 			for(int j = 0; j < 8; j++)
 			{
@@ -21,16 +21,29 @@ public class Echiquier
 	/* getCase() */
 	public Case getCase(int x, int y)
 	{
-		return this.grille[i][j];   // retourne la case par rapport a l'indice x, y
+		return this.grille[x][y];   // retourne la case par rapport a l'indice x, y
 	}
 	
-	/* setCase() */
-	public void setCase(int x, int y, Piece p)
+	/* Soumeya___setCase() - on modifie la case en lui ajoutant une piece 
+	 *  On ajoute la piece dans la case concerné
+	 * Si la case est vide alors je peux placer ma piece  */
+	
+	public void setCase(Case c, Piece p)
 	{
-		if(this.etatCase(x,y))
+		if(this.etatCase(c))
 		{
-			this.grille[i][j] = p;
+			this.grille[c.getPosX()][c.getPosY()].setPiece(p);
 		}
+	}
+	
+
+	/*Soumeya___
+	 * En ne mettant que la case concerné on retourn True si elle est vide ou bien false*/
+	public boolean etatCase(Case c)
+	{
+		if(c.estVide())
+			return true;
+		return false;
 	}
 	
 	/* GETTER */
@@ -39,17 +52,5 @@ public class Echiquier
 		return this.grille;
 	}
 	
-	//------Soumeya
-	//Permet de mettre en paramètre les coordonné d'une case pour savoir directement son etat
-	
-	public boolean etatCase(int x, int y)
-	{
-		//  if (this.grille[x][y].getCaseLibre == true)
-		//    return true;
-		//  else 
-		//    return false;
-	}
-	
-	//-----------
 
 }

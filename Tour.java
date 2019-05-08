@@ -1,13 +1,8 @@
 
 public class Tour extends Piece {
 	private String forme;
-	
-	public Tour() {
-		super();
-		this.forme="";
-	}
 
-	public Tour(int ligne, char colonne, String coul) {
+	public Tour(int ligne, char colonne, int coul) {
 		super(ligne,colonne,coul);
 		this.forme="";
 	}

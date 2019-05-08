@@ -2,13 +2,7 @@ public class Cavalier  extends Piece
 {
 	private String forme;
 
-	public Cavalier()
-	{
-		super();
-		this.forme="";
-	}
-
-	public Cavalier(int ligne, char colonne, String coul)
+	public Cavalier(int ligne, char colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		this.forme="";
