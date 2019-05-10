@@ -20,4 +20,3 @@ public class Tour extends Piece {
 	}
 
 }
-//test
