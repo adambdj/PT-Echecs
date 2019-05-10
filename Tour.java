@@ -10,4 +10,13 @@ public class Tour extends Piece {
 	public void déplacerPiece() {
 		
 	}
+
+	//Si la piece est une tour
+	//Si il n'y a personne devant moi ou a coté et si la case désigné est une caseVide : True 
+	public boolean verifDeplacement(Piece p)
+	{
+
+
+	}
+
 }

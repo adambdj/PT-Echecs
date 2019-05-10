@@ -25,56 +25,10 @@ public class Partie
 	{
 	}
 	
-	public boolean verifDeplacement(Piece p)
+	/*public boolean verifDeplacement(Piece p)
 	{
-		boolean reponse = false;
-		if(p instanceof Tour) //Si la piece est une tour
-		{
-			//Si il n'y a personne devant moi ou a coté et si la case désigné est une caseVide : True 
-		}
-		else if(p instanceof Roi) //Si la piece est un Roi
-		{
-			//Si il n'y a personne devant ou a droite ou a gauche ou derierre : True
-		}
-		else if(p instanceof Reine) //Si la piece est une Reine
-		{
-			//Pareil que le roi et si la case désigné = caseVide : True
-		}
-		else if(p instanceof Fou) //Si la piece est un fou
-		{
-			//Si il n'y a personne dur ma diagonale et si la case désigné et une caseVide : True
-		}
-		else if(p instanceof Cavalier) //Si la piece est un Cavalier
-		{
-			/* Vérifie tout les points en L :
-				si on prend la piece a déplacer comme orgine on a (i,j) (abscisse,ordonné) :
-				(1,2) (2,1) (2,-1) (1,-2) (-1,-2) (-2,-1) (-2,1) (-1,2)
-
-
-				Ou bien si le cavalier est sur une case blanche alors 
-				il peut se déplacer dans toutes les cases noir du deuxieme carré qui l'encercle
-				*: ou je peux me déplacer
-				_____________
-				|B  * B *  B|
-				|* |B N B| *|
-				|B |N C N| B|
-				|* |B N B| *|
-				|B  * B *  B|
-			*/
-				
-		}
-		else // p est un pion 
-		{
-			//Si la case de devant+1 est libre ou la case devant+2 quand on est en position initiale  
-			//Je dois créer une méthode positionIntiale
-			if ((this.positionInitialePion((Pion)p,this.joueurEnCour(this)) && this.terrain.etatCase(this.terrain.getCase(p.getPosX(), p.getPosY()+2))))	
-				reponse = true;
-			if(this.terrain.etatCase(this.terrain.getCase(p.getPosX(), p.getPosY()+1)) ) 
-				reponse = true;
-		}
-		return reponse;
 		
-	}
+	}*/
 	
 	
 	/*Soumeya___ permet de vérifier i le pion placé en paramètre est positionné dans sa case initiale ou non 

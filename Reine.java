@@ -11,5 +11,13 @@ public class Reine extends Piece
 	public void déplacerPiece()
 	{
 	}
-	
+
+
+	//Si la piece est une Reine
+	//Pareil que le roi et si la case désigné = caseVide : True
+	public boolean verifDeplacement(Echiquier e)
+	{
+		
+	}
+
 }

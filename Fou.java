@@ -12,4 +12,12 @@ public class Fou extends Piece
 	public void déplacerPiece()
 	{	
 	}
+
+	//Si la piece est un fou
+	//Si il n'y a personne dur ma diagonale et si la case désigné et une caseVide : True
+	public boolean verifDeplacement(Echiquier e)
+	{
+		
+	}
+		
 }

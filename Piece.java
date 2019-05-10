@@ -2,7 +2,7 @@
   {
   	private int couleur;	// 0 pour blanc, 1 pour noir
   	private int x;	// position x 
-    	private int y;	// position y 
+    private int y;	// position y 
    
     	// Constructeur avec paramètres
     	
