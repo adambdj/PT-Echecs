@@ -1,5 +1,5 @@
 //Ce qu'on peux faire pendant une partie
-//une partie est composé d'un echiquier
+//une partie est composé d'un échiquier
 public class Partie
 {
 	private Echiquier terrain; //Une Partie est composé d'un Echequier
