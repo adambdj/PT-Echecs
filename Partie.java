@@ -29,12 +29,7 @@ public class Partie
 	{
 		
 	}*/
-	
-	
-	/*	A FAIRE
-	 * Il faut une fonction qui renvoie le joueur qui est entrain de jouer 
-	 * Pour pouvoir utiliser la fonction positionInitialePion()
-	 */
+
 	
 	public Joueur joueurEnCour(Partie p) {
 		return joueur1;

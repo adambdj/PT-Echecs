@@ -25,8 +25,15 @@ public class Pion  extends Piece
 	}
 
 	/*Soumeya___ permet de vérifier i le pion placé en paramètre est positionné dans sa case initiale ou non 
-	 * On met en parametre le joueur car la position initiale est différente selon le joueur
+	 * On met en parametre le joueur car la position initiale est différente selon le joueur*/
 	 
+
+
+	/*	A FAIRE
+	 * Il faut une fonction qui renvoie le joueur qui est entrain de jouer 
+	 * Pour pouvoir utiliser la fonction positionInitialePion()
+	 
+
 	public boolean positionInitialePion(Pion p, Joueur numJoueur) {
 		for (int j=1;j<9;j++)
 			if(numJoueur == this.joueur1)
