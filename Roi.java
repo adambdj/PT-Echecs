@@ -1,3 +1,5 @@
+//Le Roi se déplace d'une seule case dans toutes les directions et de deux cases lors du roque.
+
 public class Roi  extends Piece
 {
 	

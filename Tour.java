@@ -1,4 +1,5 @@
-
+//La tour se déplace d'un nombre quelconque de cases horizontalement 
+//	ou verticalement et peut sauter seulement par-dessus le Roi lors du roque.
 public class Tour extends Piece
 {
 	private String forme;

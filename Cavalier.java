@@ -1,3 +1,7 @@
+//Le Cavalier se déplace en L, deux cases dans une direction (horizontalement ou verticalement), 
+//	puis d'une case perpendiculairement. 
+//		Il est le seul à pouvoir sauter par-dessus une pièce lors de son mouvement (ainsi que la Tour mais seulement lors du roque).
+
 public class Cavalier  extends Piece
 {
 	private String forme;

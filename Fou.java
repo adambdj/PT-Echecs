@@ -1,3 +1,7 @@
+//Le Fou se déplace d'un nombre quelconque de cases en diagonale sans pouvoir sauter une pièce. 
+//	Il y a un fou sur cases blanches (appelé « blanc », peu importe la couleur des pièces) et un fou sur cases noires (appelé « noir »),
+//		ce nom leur vient de leur case de départ, et du fait que leur déplacement ne peut se faire que sur des cases de cette couleur.
+
 public class Fou extends Piece
 {
 	private String forme;

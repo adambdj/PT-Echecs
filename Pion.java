@@ -1,3 +1,7 @@
+//Le Pion avance d'une case à la fois. Il se déplace d'une case en diagonale en prenant une pièce adverse. 
+//	S'il n'a pas encore bougé, il peut avancer de deux cases d'un coup, sans pouvoir sauter une pièce.
+//		Lorsqu'il arrive à la dernière rangée, il est promu en une autre pièce (Cavalier, Fou, Tour ou Reine).
+
 public class Pion  extends Piece
 {
 	private String forme;
