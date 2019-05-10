@@ -23,5 +23,21 @@ public class Pion  extends Piece
 				reponse = true;
 		*/
 	}
+
+	/*Soumeya___ permet de vérifier i le pion placé en paramètre est positionné dans sa case initiale ou non 
+	 * On met en parametre le joueur car la position initiale est différente selon le joueur
+	 
+	public boolean positionInitialePion(Pion p, Joueur numJoueur) {
+		for (int j=1;j<9;j++)
+			if(numJoueur == this.joueur1)
+				if(p.getPosX()==2 && p.getPosY() == j)
+					return true;	
+			else
+				if(p.getPosX()==7 && p.getPosY() == j)
+					return true;
+		
+		return false;
+	}
+	*/
 	
 }
