@@ -99,10 +99,10 @@ public class Echiquier
 		{
 				for (int j = 0; j < 8; j++)
 				{
-						if(this.etatCase(this.getCase(i,j)))
+					if(this.etatCase(this.getCase(i,j)))
 							s += ".";
-					//	else
-					//		s += this.getCase(i,j).getPiece().getForme();
+					else
+						s += this.getCase(i,j).getPiece().getForme();
 				}
 				s += "\n";
 		}

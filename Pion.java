@@ -5,50 +5,56 @@
 public class Pion  extends Piece
 {
 	private String forme;
-
+	private int nbrDeplacement;
+	
+	public Pion(int c) {
+		super(c);
+		this.forme="P";
+	}
 	public Pion(int ligne, char colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		this.forme="";
 	}
 	
+	public String getForme() {
+		return this.forme;
+	}
+	
 	public void déplacerPiece()
 	{
+		this.nbrDeplacement++;
 	}
 
-	public boolean verifDeplacement(Echiquier e)
+	public boolean caseVidedevant(Echequier e, int y) {
+		if( e.etatCase(e.getCase(this.getPosX(), y+1)))
+			return true;
+		return false;
+	}
+	public boolean verifDeplacement(Echequier e)
 	{
-		/*
-		//Si la case de devant+1 est libre ou la case devant+2 quand on est en position initiale  
-			//Je dois créer une méthode positionIntiale
-			if ((this.positionInitialePion((Pion)p,this.joueurEnCour(this)) && this.terrain.etatCase(this.terrain.getCase(p.getPosX(), p.getPosY()+2))))	
-				reponse = true;
-			if(this.terrain.etatCase(this.terrain.getCase(p.getPosX(), p.getPosY()+1)) ) 
-				reponse = true;
-		*/
+		if(this.getCouleur()==0) { //Pion noir
+		//Position initiale pour avancer de 2
+			if(this.positionInitialePion() 
+					&& this.caseVidedevant(e,this.getPosY()) 
+					&& this.caseVidedevant(e,this.getPosY()+2))
+				return true;
+
+		//Pour avancer de 1 que l'on soit en position initiale ou non 
+			else if (this.caseVidedevant(e, this.getPosY()+1)) 
+				return true;
+			
+		}
+
+		return false;
 	}
 
 	/*Soumeya___ permet de vérifier i le pion placé en paramètre est positionné dans sa case initiale ou non 
 	 * On met en parametre le joueur car la position initiale est différente selon le joueur*/
-	 
-
-
-	/*	A FAIRE
-	 * Il faut une fonction qui renvoie le joueur qui est entrain de jouer 
-	 * Pour pouvoir utiliser la fonction positionInitialePion()
-	 
-
-	public boolean positionInitialePion(Pion p, Joueur numJoueur) {
-		for (int j=1;j<9;j++)
-			if(numJoueur == this.joueur1)
-				if(p.getPosX()==2 && p.getPosY() == j)
-					return true;	
-			else
-				if(p.getPosX()==7 && p.getPosY() == j)
-					return true;
-		
-		return false;
-	}
-	*/
 	
-}
+	
+	public boolean positionInitialePion() {
+		if (this.nbrDeplacement != 0)
+			return false;
+		return true;
+	}

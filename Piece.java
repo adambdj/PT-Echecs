@@ -8,6 +8,12 @@ public abstract class Piece
   public Piece(){
     this.couleur = 0;
   }
+
+  // Constructeur avec paramètres
+  public Piece(int c){
+    this.couleur = c;
+  }
+  
   public Piece(int x, int y, int couleur)
   {
     this.x = x;
@@ -31,9 +37,17 @@ public abstract class Piece
       return this.couleur;
     }
 
+    public String getForme() {
+      return "";
+    }
+
   /*___________________FIN DES GETTERS	*/
 
     /* SETTERS */
+  public void setPosXetY(int x, int y) {
+    this.setPosX(x);
+    this.setPosY(y);
+  }
     public void setPosX(int x)
     {
       this.x = x;

@@ -2,7 +2,13 @@ public class Jouer
 {
     public static void main(String[] args)
     {
-        System.out.println("AAAAAAAAAAAAAAAAA");
+        Piece p = new Pion(0);
+    	Echequier e = new Echequier();
+    	e.initialiserPiecesNoir(p);
+    	e.initialiserPiecesBlanche(p);
+    	System.out.println("Affiche un jeu d'echec composé de Pion");
+    	System.out.println(e.afficher());
+       
     }
 
     /*
