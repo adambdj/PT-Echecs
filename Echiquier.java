@@ -58,24 +58,24 @@ public class Echiquier
 	public void initialiserPiecesNoir(Piece p)
 	{
 		//  Je place les pieces du joueur Noir
-		for (int i = 0; i < 8 ; i++)
+		for (int i = 0; i < 2 ; i++)
 		{
-				for (int j = 0; j < 2 ; j++)
+				for (int j = 0; j < 8 ; j++)
 				{
 						this.setCase(this.grille[i][j],p);
-						this.getCase(i,j).getPiece().setCouleur(1);
+						this.getCase(i,j).getPiece().setCouleur(0);
 				}
 		}
 
 	}
 	public void initialiserPiecesBlanche(Piece p)
 	{
-		for (int i = 0; i < 8 ; i++)
+		for (int i = 6; i < 8 ; i++)
 		{
-			for (int j = 6; j < 8; j++)
+			for (int j = 0; j < 8; j++)
 			{
 				this.setCase(this.grille[i][j],p);
-				this.getCase(i,j).getPiece().setCouleur(0);
+				this.getCase(i,j).getPiece().setCouleur(1);
 			}
 		}
 	}
