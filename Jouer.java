@@ -2,13 +2,24 @@ public class Jouer
 {
     public static void main(String[] args)
     {
-        Piece p = new Pion(0);
+        Piece p = new Pion();
     	Echequier e = new Echequier();
     	e.initialiserPiecesNoir(p);
     	e.initialiserPiecesBlanche(p);
-    	System.out.println("Affiche un jeu d'echec composé de Pion");
+    	System.out.println(e.getCase(7, 0));
+    	e.setCase(e.getCase(4, 1), p);
+    	e.setCase(e.getCase(3, 0), p);
     	System.out.println(e.afficher());
-       
+    	
+    	int x =6;
+    	int y =1;
+    	
+
+    	e.getCase(x,y).getPiece().setPosXetY(x, y);
+    	System.out.println(e.getCase(x,y).getPiece());
+    	System.out.println(e.getCase(x,y).getPiece().verifDeplacement(e));
+    	System.out.println(e.getCase(x-1,y));
+    	
     }
 
     /*

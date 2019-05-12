@@ -5,12 +5,6 @@
 public class Pion  extends Piece
 {
 	private String forme;
-	private int nbrDeplacement;
-
-	public Pion(int c) {
-		super(c);
-		this.forme="P";
-	}
 	public Pion(int ligne, char colonne, int coul)
 	{
 		super(ligne,colonne,coul);
@@ -23,38 +17,84 @@ public class Pion  extends Piece
 
 	public void deplacerPiece()
 	{
-		this.nbrDeplacement++;
+
 	}
 
-	public boolean caseVidedevant(Echequier e, int y) {
-		if( e.etatCase(e.getCase(this.getPosX(), y+1)))
-			return true;
+	public boolean caseVidedevant(Echiquier e, int x, int couleur) {
+		/*if(e.getCase(x+1, this.getPosY()).getPiece()==null )
+			return true;*/
+		if(couleur == 0) {
+			if(e.etatCase(e.getCase(x+1, this.getPosY())))
+				return true;
+		}else
+			if(e.etatCase(e.getCase(x-1, this.getPosY())))
+				return true;
+
+
 		return false;
 	}
-	public boolean verifDeplacement(Echequier e)
+
+	public boolean mouvementValideNoir(Echiquier e) {
+		if(this.positionInitialePion()
+				&& this.caseVidedevant(e,this.getPosX(),0)
+				&& this.caseVidedevant(e,this.getPosX()+1,0))
+			return true;//position initiale ; case+1 vide ; case+2 vide
+
+		else if(this.positionInitialePion() && this.caseVidedevant(e,this.getPosX(),0 ) )
+			return true; //position initiale ; case+1 vide
+
+		else if(this.caseVidedevant(e,this.getPosX(),0))
+			return true;//!position initiale ; case+1 vide
+
+		return false ;//!position initiale ; case+1 non null | position initiale; case+1 non null
+	}
+
+	public boolean mouvementValideBlanc (Echiquier e) {
+		if (this.positionInitialePion()
+				&& this.caseVidedevant(e,this.getPosX(),1)
+				&& this.caseVidedevant(e,this.getPosX()-1,1))
+			return true; //position initiale ; case+1 vide ; case+2 vide
+		else if(this.positionInitialePion() && this.caseVidedevant(e,this.getPosX(),1 ) )
+			return true; //position initiale ; case+1 vide
+		else if(this.caseVidedevant(e,this.getPosX(),1))
+			return true; //!position initiale ; case+1 vide
+
+		return false; //!position initiale ; case+1 non null | position initiale; case+1 non null
+	}
+
+
+	public boolean verifDeplacement(Echiquier e)
 	{
 		if(this.getCouleur()==0) { //Pion noir
-		//Position initiale pour avancer de 2
-			if(this.positionInitialePion()
-					&& this.caseVidedevant(e,this.getPosY())
-					&& this.caseVidedevant(e,this.getPosY()+2))
+			if(this.mouvementValideNoir(e))
 				return true;
-
-		//Pour avancer de 1 que l'on soit en position initiale ou non
-			else if (this.caseVidedevant(e, this.getPosY()+1))
+		}else
+			if(this.mouvementValideBlanc(e))
 				return true;
-
-		}
-
 		return false;
 	}
 
-	/*Soumeya___ permet de vérifier i le pion placé en paramètre est positionné dans sa case initiale ou non
-	 * On met en parametre le joueur car la position initiale est différente selon le joueur*/
-
-
 	public boolean positionInitialePion() {
-		if (this.nbrDeplacement != 0)
-			return false;
-		return true;
+
+		if(this.getCouleur() == 0)
+		{
+			for (int j = 0; j < 8 ; j++)
+			{
+					if(this.getPosX() == 1 && this.getPosY() == j)
+						return true;
+			}
+
+		}else
+		{
+			for (int j = 0; j < 8 ; j++)
+			{
+				if(this.getPosX() == 6 && this.getPosY() == j)
+					return true;
+			}
+
+		}
+		return false;
 	}
+
+
+}

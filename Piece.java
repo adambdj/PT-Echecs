@@ -6,20 +6,19 @@ public abstract class Piece
 
     // Constructeur avec paramètres
   public Piece(){
-    this.couleur = 0;
   }
 
-  // Constructeur avec paramètres
-  public Piece(int c){
-    this.couleur = c;
-  }
-  
   public Piece(int x, int y, int couleur)
   {
     this.x = x;
     this.y = y;
     this.couleur = couleur;
   }
+  public boolean verifDeplacement(Echiquier e)
+  {
+    return true;
+  }
+  
 
     /* GETTERS */
     public int getPosX()
@@ -73,10 +72,10 @@ public abstract class Piece
     {
       String s ="";
       if(this.couleur == 0)
-        s = "blanc";
-      else
         s = "noir";
-
+      else
+        s = "blanc";
+      
         return "Piece [" + this.x+";"  + this.y+ "]" + "couleur : " + s;
     }
 }
