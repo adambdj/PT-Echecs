@@ -28,7 +28,7 @@ public class Fou extends Piece
 		return super.toString() + " et la piece a la forme " + this.forme;
 	}
 }
-	public void déplacerPiece()
+	public void deplacerPiece()
 	{
 	}
 

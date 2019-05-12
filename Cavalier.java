@@ -1,5 +1,5 @@
-//Le Cavalier se déplace en L, deux cases dans une direction (horizontalement ou verticalement), 
-//	puis d'une case perpendiculairement. 
+//Le Cavalier se déplace en L, deux cases dans une direction (horizontalement ou verticalement),
+//	puis d'une case perpendiculairement.
 //		Il est le seul à pouvoir sauter par-dessus une pièce lors de son mouvement (ainsi que la Tour mais seulement lors du roque).
 
 public class Cavalier  extends Piece
@@ -11,9 +11,9 @@ public class Cavalier  extends Piece
 		super(ligne,colonne,coul);
 		this.forme="";
 	}
-	
-	public void déplacerPiece()
-	{	
+
+	public void deplacerPiece()
+	{
 	}
 
 
@@ -24,7 +24,7 @@ public class Cavalier  extends Piece
 		(1,2) (2,1) (2,-1) (1,-2) (-1,-2) (-2,-1) (-2,1) (-1,2)
 
 
-		Ou bien si le cavalier est sur une case blanche alors 
+		Ou bien si le cavalier est sur une case blanche alors
 		il peut se déplacer dans toutes les cases noir du deuxieme carré qui l'encercle
 		*: ou je peux me déplacer
 				_____________
@@ -34,6 +34,6 @@ public class Cavalier  extends Piece
 				|* |B N B| *|
 				|B  * B *  B|
 	*/
-		
+
 	}
 }
