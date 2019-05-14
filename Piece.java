@@ -1,6 +1,6 @@
 public abstract class Piece
 {
-  private int couleur;	// 0 pour blanc, 1 pour noir
+  private int couleur;	// 0 pour noir, 1 pour blanc
   private int x;	// position x
   private int y;	// position y
 
