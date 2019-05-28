@@ -36,6 +36,7 @@ public class Echiquier
 		if(this.etatCase(c))
 		{
 			this.grille[c.getPosX()][c.getPosY()].setPiece(p);
+			p.setPosXetY(c.getPosX(), c.getPosY());
 		}
 	}
 
@@ -92,19 +93,21 @@ public class Echiquier
 		return s;
 	}
 
-	public String afficher()
-	{
-		String s = "";
+	public String afficher(){
+		int nb =1;
+		String s = "   A   B   C   D   E   F   G   H\n";
 		for (int i = 0; i < 8; i++)
 		{
+			s+=nb+" |";
 				for (int j = 0; j < 8; j++)
 				{
-					if(this.etatCase(this.getCase(i,j)))
-							s += ".";
-					else
-						s += this.getCase(i,j).getPiece().getForme();
+						if(this.etatCase(this.getCase(i,j)))
+							s += ".   ";
+						else
+							s += this.getCase(i,j).getPiece().getForme()+"   ";
 				}
-				s += "\n";
+			s += "\n";
+			nb++;
 		}
 		return s;
 	}
