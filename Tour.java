@@ -5,10 +5,20 @@ public class Tour extends Piece
 {
 	private String forme;
 
+	public Tour()
+	{
+		super();
+		this.forme = "T";
+	}
 	public Tour(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		this.forme="T";
+	}
+
+	public String getForme()
+	{
+		return this.forme;
 	}
 
 	public void deplacerPiece()
@@ -20,7 +30,11 @@ public class Tour extends Piece
 	public boolean verifDeplacement(Piece p)
 	{
 		return true;		// JUSTE POUR LA COMPILATION
+	}
 
+	public String toString()
+	{
+		return super.toString() + " et la piece a la forme " + this.forme;
 	}
 
 }

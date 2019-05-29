@@ -4,10 +4,21 @@ public class Reine extends Piece
 {
 	private String forme;
 
+	public Reine()
+	{
+		super();
+		this.forme = "Re";
+	}
+
 	public Reine(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		this.forme="Re";
+	}
+
+	public String getForme()
+	{
+		return this.forme;
 	}
 
 	public void deplacerPiece()
@@ -20,6 +31,10 @@ public class Reine extends Piece
 	public boolean verifDeplacement(Echiquier e)
 	{
 		return true;		// JUSTE POUR LA COMPILATION
+	}
+	public String toString()
+	{
+		return super.toString() + " et la piece a la forme " + this.forme;
 	}
 
 }

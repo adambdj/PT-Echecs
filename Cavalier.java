@@ -6,12 +6,23 @@ public class Cavalier  extends Piece
 {
 	private String forme;
 
+	public Cavalier()
+	{
+		super();
+		this.forme = "C";
+	}
+
 	public Cavalier(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		this.forme="C";
 	}
 
+	public String getForme()
+	{
+		return this.forme;
+	}
+	
 	public void deplacerPiece()
 	{
 	}
@@ -37,4 +48,8 @@ public class Cavalier  extends Piece
 	return true;		// JUSTE POUR LA COMPILATION
 	}
 
+	public String toString()
+	{
+		return super.toString() + " et la piece a la forme " + this.forme;
+	}
 }
