@@ -5,10 +5,10 @@
 public class Pion  extends Piece
 {
 	private String forme;
-	public Pion(int ligne, char colonne, int coul)
+	public Pion(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="";
+		this.forme="Pi";
 	}
 
 	public String getForme() {

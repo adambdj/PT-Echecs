@@ -5,10 +5,10 @@ public class Roi  extends Piece
 
 	private String forme;
 
-	public Roi(int ligne, char colonne, int coul)
+	public Roi(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="";
+		this.forme="Roi";
 	}
 
 	public void deplacerPiece()

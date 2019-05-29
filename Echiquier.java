@@ -5,7 +5,8 @@ public class Echiquier
 	public Echiquier()
 	{
 		this.intialiser();
-		//this.InitialiserPiece();
+		this.initialiserPiecesNoir();
+		this.initialiserPiecesBlanche();
 	}
 
 	/* Initialise le tableau */
@@ -56,27 +57,47 @@ public class Echiquier
 		return this.grille;
 	}
 
-	public void initialiserPiecesNoir(Piece p)
+	public void initialiserPiecesNoir()
 	{
 		//  Je place les pieces du joueur Noir
 		for (int i = 0; i < 2 ; i++)
 		{
-				for (int j = 0; j < 8 ; j++)
+				this.grille[i][0].setPiece(new Tour(i,0,0));
+				this.grille[i][1].setPiece(new Cavalier(i,1,0));
+				this.grille[i][2].setPiece(new Fou(i,2,0));
+				this.grille[i][3].setPiece(new Reine(i,3,0));
+				this.grille[i][4].setPiece(new Roi(i,4,0));
+				this.grille[i][5].setPiece(new Fou(i,5,0));
+				this.grille[i][6].setPiece(new Cavalier(i,6,0));
+				this.grille[i][7].setPiece(new Tour(i,7,0));
+				if (i == 1)
 				{
-						this.setCase(this.grille[i][j],p);
-						this.getCase(i,j).getPiece().setCouleur(0);
+					for (int j = 0; j < 8; j++)
+					{
+						this.grille[i][j].setPiece(new Pion(i,j,0));
+					}
 				}
 		}
-
 	}
-	public void initialiserPiecesBlanche(Piece p)
+	public void initialiserPiecesBlanche()
 	{
-		for (int i = 6; i < 8 ; i++)
+		// Je place les pieces du joueur blanc
+		for (int i = 7; i > 5 ; i--)
 		{
-			for (int j = 0; j < 8; j++)
+			this.grille[i][0].setPiece(new Tour(i,0,1));
+			this.grille[i][1].setPiece(new Cavalier(i,1,1));
+			this.grille[i][2].setPiece(new Fou(i,2,1));
+			this.grille[i][3].setPiece(new Reine(i,3,1));
+			this.grille[i][4].setPiece(new Roi(i,4,1));
+			this.grille[i][5].setPiece(new Fou(i,5,1));
+			this.grille[i][6].setPiece(new Cavalier(i,6,1));
+			this.grille[i][7].setPiece(new Tour(i,7,1));
+			if (i == 6)
 			{
-				this.setCase(this.grille[i][j],p);
-				this.getCase(i,j).getPiece().setCouleur(1);
+				for (int j = 0; j < 8; j++)
+				{
+					this.grille[i][j].setPiece(new Pion(i,j,1));
+				}
 			}
 		}
 	}

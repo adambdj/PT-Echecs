@@ -12,10 +12,10 @@ public class Fou extends Piece
 		this.forme = "F";
 	}
 
-	public Fou(int ligne, char colonne, int coul)
+	public Fou(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="";
+		this.forme="F";
 	}
 
 	public String getForme()
@@ -27,7 +27,8 @@ public class Fou extends Piece
 	{
 		return super.toString() + " et la piece a la forme " + this.forme;
 	}
-}
+
+
 	public void deplacerPiece()
 	{
 	}
@@ -36,7 +37,7 @@ public class Fou extends Piece
 	//Si il n'y a personne dur ma diagonale et si la case désigné et une caseVide : True
 	public boolean verifDeplacement(Echiquier e)
 	{
-
+		return true;		// JUSTE POUR LA COMPILATION
 	}
 
 }
