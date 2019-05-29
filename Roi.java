@@ -8,13 +8,13 @@ public class Roi  extends Piece
 	public Roi()
 	{
 		super();
-		this.forme = "Ro";
+		this.forme = "R";
 	}
 
 	public Roi(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="Roi";
+		this.forme="R";
 	}
 
 	public String getForme()

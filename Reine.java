@@ -7,13 +7,13 @@ public class Reine extends Piece
 	public Reine()
 	{
 		super();
-		this.forme = "Re";
+		this.forme = "D";
 	}
 
 	public Reine(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="Re";
+		this.forme="D";
 	}
 
 	public String getForme()
