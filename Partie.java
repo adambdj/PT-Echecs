@@ -9,7 +9,7 @@ public class Partie
 	
 	public Partie()
 	{
-		this.terrain=new Echequier();
+		this.terrain=new Echiquier();
 	}
 	
 //--------------Soumeya
