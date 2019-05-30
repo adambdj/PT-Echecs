@@ -3,26 +3,26 @@ import java.util.ArrayList;
 
 public class Joueur
 {
-	private String prénom;
+	private String prenom;
 	private int couleur;
 	private ArrayList<Piece> tabPiece;
 
 	public Joueur(String p, int c)
 	{
-		this.prénom=p;
+		this.prenom=p;
 		this.couleur=c;
 	}
 
 
 	//Les accesseurs
-	public String getPrénom()
+	public String getPrenom()
 	{
-		return prénom;
+		return prenom;
 	}
 	
-	public void setPrénom(String prénom)
+	public void setPrenom(String prenom)
 	{
-		this.prénom = prénom;
+		this.prenom = prenom;
 	}
 	
 	public int getCouleur()
