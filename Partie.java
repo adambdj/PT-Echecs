@@ -62,7 +62,7 @@ public class Partie
 	{
 	}
 
-	public Echequier getTerrain()
+	public Echiquier getTerrain()
 	{
 		return terrain;
 	}
