@@ -2,6 +2,7 @@ import java.util.*;
 public class Echiquier
 {
 	private Case[][] grille;
+	
 	public Echiquier()
 	{
 		this.intialiser();
