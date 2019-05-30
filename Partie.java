@@ -67,7 +67,7 @@ public class Partie
 		return terrain;
 	}
 
-	public void setTerrain(Echequier nouvTerrain)
+	public void setTerrain(Echiquier nouvTerrain)
 	{
 		this.terrain = nouvTerrain;
 	}
