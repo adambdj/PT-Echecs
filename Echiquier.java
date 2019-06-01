@@ -5,13 +5,13 @@ public class Echiquier
 	
 	public Echiquier()
 	{
-		this.intialiser();
+		this.initialiser();
 		this.initialiserPiecesNoir();
 		this.initialiserPiecesBlanche();
 	}
 
 	/* Initialise le tableau */
-	public void intialiser()
+	public void initialiser()
 	{
 		this.grille = new Case[8][8];
 		for(int i = 0; i < 8; i++)
@@ -44,7 +44,7 @@ public class Echiquier
 
 
 	/*Soumeya___
-	 * En ne mettant que la case concerné on retourn True si elle est vide ou bien false*/
+	 * En ne mettant que la case concerné on retourne True si elle est vide ou bien false*/
 	public boolean etatCase(Case c)
 	{
 		if(c.estVide())
@@ -115,26 +115,80 @@ public class Echiquier
 		return s;
 	}
 
-	public String afficher(){
-		int nb =1;
+// V.1
+	//public String afficher(){
+	// 	int nb =1;
+	// 	String s = "   A   B   C   D   E   F   G   H\n";
+	// 	for (int i = 0; i < 8; i++)
+	// 	{
+	// 		s+=nb+" |";
+	// 			for (int j = 0; j < 8; j++)
+	// 			{
+	// 					if(this.etatCase(this.getCase(i,j)))
+	// 						s += ".   ";
+	// 					else
+	// 						s += this.getCase(i,j).getPiece().getForme()+"   ";
+	// 			}
+	// 		s += "\n";
+	// 		nb++;
+	// 	}
+	// 	return s;
+	// }
+
+// AFFICHAGE V.2 DE L'ÉCHIQUIER
+	public String afficher()
+    {
 		String s = "   A   B   C   D   E   F   G   H\n";
-		for (int i = 0; i < 8; i++)
+		int nb = 1;
+		String element = "";     // éléments à afficher selon la case EXEMPLE : "*  T   " (pour la Tour) , ou "*  F   " (pour le Fou)
+		String bordure = "";        // bordure de l'affichage, composé de *
+		String espacement = "";     // l'espace entre l'élement à afficher et la bordure du plateau
+		String res = "";
+
+    	// la première boucle permet d'afficher les bords 
+		for(int u = 0; u < 8; u++)
 		{
-			s+=nb+" |";
+			bordure += "********";
+		}
+		bordure += "*";     // pour avoir la dernière étoile de la bordure
+
+		res = bordure + '\n';   // on commence par afficher la première ligne horizontale de la bordure
+
+		// la deuxième boucle, elle, permet d'afficher les 6 espaces entre les colonnes d'étoiles
+		for(int p = 0; p < 8; p++)
+		{
+			espacement += "*	";
+		}
+		espacement += "*";      // pour avoir la dernière étoile de la bordure
+ 
+        // la troisième boucle, permet d'attribuer à une case le caractère de la pièce correspondante
+    	// La chaine sera contenu dans la variable 'element'
+ 		for(int i = 0; i < 8; i++)
+		{
 				for (int j = 0; j < 8; j++)
 				{
+						element += "*   ";
 						if(this.etatCase(this.getCase(i,j)))
-							s += ".   ";
+							element += ".   ";
 						else
-							s += this.getCase(i,j).getPiece().getForme()+"   ";
+							element += this.getCase(i,j).getPiece().getForme()+"   ";
 				}
-			s += "\n";
-			nb++;
-		}
-		return s;
-	}
-}
+			
+			element += "*";      // pour avoir la dernière étoile de la bordure
+			res += espacement + "\n" + 
+                    element + "\n" + 
+                        espacement + "\n" +  // assemblage de toutes les composantes qui constituent l'affichage final
+                            bordure + '\n';     // un espacement, l'information de la pièce, un espacement ainsi que la bordure pour finir
 
+			element = "";    //réinitialiser l'élement à afficher
+			
+
+		}
+
+		return res;     //on retourne la variable resultat contenant ce qui correspond à l'échiquier final
+	}
+
+}
 
 
 
