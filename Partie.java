@@ -26,11 +26,6 @@ public class Partie
 	// {
 	// }
 	
-	public boolean verifDeplacement(Piece p)
-	{
-		return true;		// JUSTE POUR LA COMPILATION
-	}
-
 	
 	public Joueur joueurEnCour(Partie p) {
 		return joueur1;
