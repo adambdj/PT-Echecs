@@ -45,4 +45,18 @@ public class Joueur
 		this.tabPiece = tabPiece;
 	}
 
+
+	public String coul() {
+		String s ="";
+		if(this.couleur == 1)
+			s+="Blanche";
+		else 
+			s+="Noire";
+		return s ;
+	}
+	
+	public String toString() {
+		return "Joueur "+this.prenom+" posséde les pieces "+this.coul();
+	}
+
 }
