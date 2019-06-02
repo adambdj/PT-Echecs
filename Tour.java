@@ -8,12 +8,27 @@ public class Tour extends Piece
 	public Tour()
 	{
 		super();
-		this.forme = "T";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♜";
+		}
+		else
+		{
+			this.forme = "♖";
+		}
+
 	}
 	public Tour(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="T";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♜";
+		}
+		else
+		{
+			this.forme = "♖";
+		}
 	}
 
 	public String getForme()

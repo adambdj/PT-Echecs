@@ -8,13 +8,27 @@ public class Roi  extends Piece
 	public Roi()
 	{
 		super();
-		this.forme = "R";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♚";
+		}
+		else
+		{
+			this.forme = "♔";
+		}
 	}
 
 	public Roi(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="R";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♚";
+		}
+		else
+		{
+			this.forme = "♔";
+		}
 	}
 
 	public String getForme()

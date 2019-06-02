@@ -7,13 +7,27 @@ public class Reine extends Piece
 	public Reine()
 	{
 		super();
-		this.forme = "D";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♛";
+		}
+		else
+		{
+			this.forme = "♕";
+		}
 	}
 
 	public Reine(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="D";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♛";
+		}
+		else
+		{
+			this.forme = "♕";
+		}
 	}
 
 	public String getForme()
