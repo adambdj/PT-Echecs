@@ -10,8 +10,6 @@ public class Partie
 	public Partie()
 	{
 		this.terrain=new Echiquier();
-		this.joueur1=j1;
-		this.joueur2=j2;
 	}
 	
 //--------------Soumeya
@@ -28,7 +26,12 @@ public class Partie
 	// {
 	// }
 	
+	public boolean verifDeplacement(Piece p)
+	{
+		return true;		// JUSTE POUR LA COMPILATION
+	}
 
+	
 	public Joueur joueurEnCour(Partie p) {
 		return joueur1;
 	}
