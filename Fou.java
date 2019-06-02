@@ -9,13 +9,27 @@ public class Fou extends Piece
 	public Fou()
 	{
 		super();
-		this.forme = "F";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♝";
+		}
+		else
+		{
+			this.forme = "♗";
+		}
 	}
 
 	public Fou(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="F";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♝";
+		}
+		else
+		{
+			this.forme = "♗";
+		}
 	}
 
 	public String getForme()

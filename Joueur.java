@@ -1,28 +1,48 @@
 import java.util.ArrayList;
 
-
 public class Joueur
 {
-	private String prénom;
+	private String prenom;
 	private int couleur;
 	private ArrayList<Piece> tabPiece;
 
 	public Joueur(String p, int c)
 	{
-		this.prénom=p;
+		this.prenom=p;
 		this.couleur=c;
 	}
 
-
-	//Les accesseurs
-	public String getPrénom()
-	{
-		return prénom;
+	public int convertion(char lettre) {
+		if (lettre == 'A' )
+			return 0;
+		else if (lettre == 'B')
+			return 1;
+		else if (lettre == 'C')
+			return 2;
+		else if (lettre == 'D')
+			return 3;
+		else if (lettre == 'E')
+			return 4;
+		else if (lettre == 'F')
+			return 5;
+		else if (lettre == 'G')
+			return 6;
+		else 
+			return 7;	
+	}
+	public Case getChoix(Echiquier e , int ligne, char colonne) {
+		return e.getCase( ligne-1,this.convertion(colonne));
 	}
 	
-	public void setPrénom(String prénom)
+	//Les accesseurs
+	public String getPrenom()
 	{
-		this.prénom = prénom;
+		return prenom;
+	}
+	
+	public void setPrenom(String prenom)
+	{
+		this.prenom = prenom;
 	}
 	
 	public int getCouleur()
@@ -43,6 +63,20 @@ public class Joueur
 	public void setTabPiece(ArrayList<Piece> tabPiece)
 	{
 		this.tabPiece = tabPiece;
+	}
+
+
+	public String coul() {
+		String s ="";
+		if(this.couleur == 1)
+			s+="Blanche";
+		else 
+			s+="Noire";
+		return s ;
+	}
+	
+	public String toString() {
+		return "Joueur "+this.prenom+" posséde les pieces "+this.coul();
 	}
 
 }

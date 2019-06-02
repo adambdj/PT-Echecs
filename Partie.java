@@ -9,28 +9,26 @@ public class Partie
 	
 	public Partie()
 	{
-		this.terrain=new Echequier();
+		this.terrain=new Echiquier();
+		this.joueur1=j1;
+		this.joueur2=j2;
 	}
 	
 //--------------Soumeya
 	/*Le jeu annonce un MAT lorsque le Roi est attaqué et qu’il n’y a aucune possibilité de le sauver.*/
-	public boolean verifMAT()
-	{
-	}
+
+	// public boolean verifMAT()
+	// {
+	// }
 
 	/*	Le jeu annonce un PAT lorsque le joueur ne peut déplacer aucune pièces 
 	 *	et que le roi n’est pas en attaque et ne peut se déplacer sans se mettre en échec .*/
 
-	public boolean verifPAT()
-	{
-	}
+	// public boolean verifPAT()
+	// {
+	// }
 	
-	/*public boolean verifDeplacement(Piece p)
-	{
-		
-	}*/
 
-	
 	public Joueur joueurEnCour(Partie p) {
 		return joueur1;
 	}
@@ -62,12 +60,12 @@ public class Partie
 	{
 	}
 
-	public Echequier getTerrain()
+	public Echiquier getTerrain()
 	{
 		return terrain;
 	}
 
-	public void setTerrain(Echequier nouvTerrain)
+	public void setTerrain(Echiquier nouvTerrain)
 	{
 		this.terrain = nouvTerrain;
 	}

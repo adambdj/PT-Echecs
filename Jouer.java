@@ -2,8 +2,28 @@ public class Jouer
 {
     public static void main(String[] args)
     {
-    	Echiquier e = new Echiquier();
-    	System.out.println(e.afficher());
+    	Scanner saisie = new Scanner(System.in);
+    	
+    	System.out.println("Joueur 1 : Votre nom ?");
+    	String j1nom = saisie.nextLine();
+    	Joueur j1 = new Joueur(j1nom,1);
+    	
+    	System.out.println("Joueur 2 : Votre nom ?");
+    	String j2nom = saisie.nextLine();
+    	Joueur j2 = new Joueur(j2nom,0);
+    	
+    	System.out.println(j1 + "\n" + j2);
+    	Partie pp = new Partie(j1,j2);
+
+    	System.out.println(pp.getTerrain().afficher());
+
+    	System.out.println(j1.getPrenom() + " où voulez vous vous déplacer?");
+    	String pos = saisie.nextLine();
+    	int lig = pos.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
+
+    	System.out.println("Position saisie -> "+pos+" : "+j1.getChoix(pp.getTerrain(),lig,pos.charAt(0)));
+    
+    
     }
 
     /*

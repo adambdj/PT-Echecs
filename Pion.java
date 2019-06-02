@@ -5,10 +5,31 @@
 public class Pion  extends Piece
 {
 	private String forme;
+
+	public Pion()
+	{
+		super();
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♟";
+		}
+		else
+		{
+			this.forme = "♙";
+		}
+	}
+
 	public Pion(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="P";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♟";
+		}
+		else
+		{
+			this.forme = "♙";
+		}
 	}
 
 	public String getForme() {

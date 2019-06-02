@@ -9,13 +9,27 @@ public class Cavalier  extends Piece
 	public Cavalier()
 	{
 		super();
-		this.forme = "C";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♞";
+		}
+		else
+		{
+			this.forme = "♘";
+		}
 	}
 
 	public Cavalier(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
-		this.forme="C";
+		if(this.getCouleur() == 0)
+		{
+			this.forme = "♞";
+		}
+		else
+		{
+			this.forme = "♘";
+		}
 	}
 
 	public String getForme()
