@@ -10,11 +10,11 @@ public class Roi  extends Piece
 		super();
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "♚";
+			this.forme = "R";				// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "♔";
+			this.forme = "R";				// si la pièce est blanche
 		}
 	}
 
@@ -23,11 +23,11 @@ public class Roi  extends Piece
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "♚";
+			this.forme = "R";				// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "♔";
+			this.forme = "R";				// si la pièce est blanche
 		}
 	}
 

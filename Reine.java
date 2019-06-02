@@ -7,13 +7,13 @@ public class Reine extends Piece
 	public Reine()
 	{
 		super();
-		if(this.getCouleur() == 0)
+		if(this.getCouleur() == 0)		// si la pièce est noire
 		{
-			this.forme = "♛";
+			this.forme = "D";
 		}
-		else
+		else							// si la pièce est blanche
 		{
-			this.forme = "♕";
+			this.forme = "D";
 		}
 	}
 
@@ -22,11 +22,11 @@ public class Reine extends Piece
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "♛";
+			this.forme = "D";			// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "♕";
+			this.forme = "D";			// si la pièce est blanche
 		}
 	}
 

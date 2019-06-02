@@ -11,11 +11,11 @@ public class Fou extends Piece
 		super();
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "♝";
+			this.forme = "F";					// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "♗";
+			this.forme = "F";					// si la pièce est blanche
 		}
 	}
 
@@ -24,11 +24,11 @@ public class Fou extends Piece
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "♝";
+			this.forme = "F";					// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "♗";
+			this.forme = "F";					// si la pièce est blanche
 		}
 	}
 
