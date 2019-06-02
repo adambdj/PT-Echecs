@@ -35,9 +35,36 @@ public class Fou extends Piece
 
 	//Si la piece est un fou
 	//Si il n'y a personne dur ma diagonale et si la case désigné et une caseVide : True
-	public boolean verifDeplacement(Echiquier e)
+	public void verifDeplacement(Echiquier e, int i, int j)
 	{
-		return true;		// JUSTE POUR LA COMPILATION
+		boolean p = false;
+		int a = this.getPosX();
+		int b = this.getPosY();
+
+		if (e.etatCase(e.getCase(i,j)) == false && e.getCase(i,j).getPiece().getCouleur() == this.getCouleur())
+			System.out.println("La position de destination est Pion allie");
+		else
+			if (a > i && b < j)
+			{
+				a = a - 1;
+				b = b + 1;
+				while (a >= i || b <= j)
+				{
+					if (e.etatCase(e.getCase(a,b)) || e.getCase(a,b).getPiece().getCouleur() != this.getCouleur())
+					{
+							//p = true;
+							System.out.println("case vide dans ligne : " + a + " colonne : " + b);
+					}
+					else
+						if (e.etatCase(e.getCase(a,b)) == false && e.getCase(a,b).getPiece().getCouleur() == this.getCouleur())
+						{
+							System.out.println(" y a un pion dans la case !!! dans x : " + a + " y : " + b);
+						}
+						a = a - 1;
+						b = b + 1;
+				}
+			}
 	}
+
 
 }

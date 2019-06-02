@@ -14,11 +14,10 @@ public abstract class Piece
     this.y = y;
     this.couleur = couleur;
   }
-  public boolean verifDeplacement(Echiquier e)
+  public void verifDeplacement(Echiquier e, int i, int j)
   {
-    return true;
   }
-  
+
 
     /* GETTERS */
     public int getPosX()
@@ -75,7 +74,7 @@ public abstract class Piece
         s = "noir";
       else
         s = "blanc";
-      
+
         return "Piece [" + this.x+";"  + this.y+ "]" + "couleur : " + s;
     }
 }
