@@ -16,6 +16,14 @@ public class Jouer
     	Partie pp = new Partie(j1,j2);
 
     	System.out.println(pp.getTerrain().afficher());
+
+    	System.out.println(j1.getPrenom() + " où voulez vous vous déplacer?");
+    	String pos = saisie.nextLine();
+    	int lig = pos.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
+
+    	System.out.println("Position saisie -> "+pos+" : "+j1.getChoix(pp.getTerrain(),lig,pos.charAt(0)));
+    
+    
     }
 
     /*
