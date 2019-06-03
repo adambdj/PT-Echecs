@@ -138,8 +138,8 @@ public class Echiquier
 // AFFICHAGE V.2 DE L'ÉCHIQUIER
 	public String afficher()
     {
-		String s = "\n	    A	    B	    C	    D	    E	    F	    G	    H\n";
-		int nb = 1;
+		String s = "	    A	    B	    C	    D	    E	    F	    G	    H\n";
+		int nb = 8;
 		String test = "";
 		String element = "";     // éléments à afficher selon la case EXEMPLE : "*  T   " (pour la Tour) , ou "*  F   " (pour le Fou)
 		String bordure = "\t";        // bordure de l'affichage, composé de *
@@ -177,17 +177,17 @@ public class Echiquier
 			
 
 			element += "*";      // pour avoir la dernière étoile de la bordure
-			res += "     " + nb + espacement + "\n	"
+			res += "     " + nb + espacement + "  " + nb + "\n	"
 					+ element + "\n"
 						+ espacement + "\n"		// assemblage de toutes les composantes qui constituent l'affichage final
                         	+ bordure + '\n';     // un espacement, l'information de la pièce, un espacement ainsi que la bordure pour finir
 
 			element = "";    //réinitialiser l'élement à afficher
 			
-			nb += 1;
+			nb -= 1;
 		}
 
-		return s + res;     //on retourne la variable resultat contenant ce qui correspond à l'échiquier final
+		return s + res + s;     //on retourne la variable resultat contenant ce qui correspond à l'échiquier final
 	}
 
 }
