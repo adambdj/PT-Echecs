@@ -14,8 +14,9 @@ public abstract class Piece
     this.y = y;
     this.couleur = couleur;
   }
-  public void verifDeplacement(Echiquier e, int i, int j)
+  public boolean verifDeplacement(Echiquier e, int i, int j)
   {
+    return true;
   }
 
 
@@ -63,7 +64,15 @@ public abstract class Piece
   /*___________________FIN DES SETTERS	*/
 
     // Deplacer piece a redefinir dans les objects tour, cavalier etc...
-     public void deplacerPiece(){}
+     public void deplacerPiece(Echiquier e, int i, int j)
+     {
+       if (this.verifDeplacement(e,i,j))
+       {
+          int x = this.getPosX();
+          int y = this.getPosY();
+          e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).setPiece();
+       }
+     }
 
 
   /* Methode toString */
