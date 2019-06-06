@@ -2,7 +2,7 @@ import java.util.*;
 public class Echiquier
 {
 	private Case[][] grille;
-	
+
 	public Echiquier()
 	{
 		this.initialiser();
@@ -146,7 +146,7 @@ public class Echiquier
 		String espacement = "\t";     // l'espace entre l'élement à afficher et la bordure du plateau
 		String res = "";
 
-    	// la première boucle permet d'afficher les bords 
+    	// la première boucle permet d'afficher les bords
 		for(int u = 0; u < 8; u++)
 		{
 			bordure += "********";
@@ -161,7 +161,7 @@ public class Echiquier
 			espacement += "*	";
 		}
 		espacement += "*";      // pour avoir la dernière étoile de la bordure
- 
+
         // la troisième boucle, permet d'attribuer à une case le caractère de la pièce correspondante
     	// La chaine sera contenu dans la variable 'element'
  		for(int i = 0; i < 8; i++)
@@ -174,7 +174,7 @@ public class Echiquier
 						else
 							element += this.getCase(i,j).getPiece().getForme()+"   ";
 				}
-			
+
 
 			element += "*";      // pour avoir la dernière étoile de la bordure
 			res += "     " + nb + espacement + "  " + nb + "\n	"
@@ -183,7 +183,7 @@ public class Echiquier
                         	+ bordure + '\n';     // un espacement, l'information de la pièce, un espacement ainsi que la bordure pour finir
 
 			element = "";    //réinitialiser l'élement à afficher
-			
+
 			nb -= 1;
 		}
 
