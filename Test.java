@@ -5,9 +5,13 @@ public class Test
     Echiquier e = new Echiquier();
 
     System.out.println(e.afficher());
-    try{
+    try
+    {
       e.getCase(7,2).getPiece().verifDeplacement(e,1,5);
-    }catch(Exception ex){
+    }
+    
+    catch(Exception ex)
+    {
       System.out.println(ex);
     }
   }
