@@ -144,7 +144,7 @@ public abstract class Piece
        {
           int x = this.getPosX();
           int y = this.getPosY();
-          e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).setPiece();
+          e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).getPiece());
        }
      }
 

@@ -42,8 +42,13 @@ public class Tour extends Piece
 
 	//Si la piece est une Tour
 	//Si il n'y a personne devant moi ou a coté et si la case désigné est une caseVide : True
-	public boolean verifDeplacement(Piece p)
+	public boolean verifDeplacement(Echiquier e, int i, int j)
 	{
+		int departX = this.getPosX();
+		int departY = this.getPosY();
+
+		// i - departX == 1 || 
+
 		return true;		// JUSTE POUR LA COMPILATION
 	}
 

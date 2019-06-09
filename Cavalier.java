@@ -42,8 +42,12 @@ public class Cavalier  extends Piece
 	}
 
 
-	public boolean verifDeplacement(Echiquier e)
+	public boolean verifDeplacement(Echiquier e, int i, int j)
 	{
+		int departX = this.getPosX();
+		int departY = this.getPosY();
+
+
 		/* Vérifie tout les points en L :
 		si on prend la piece a déplacer comme orgine on a (i,j) (abscisse,ordonné) :
 		(1,2) (2,1) (2,-1) (1,-2) (-1,-2) (-2,-1) (-2,1) (-1,2)
@@ -59,7 +63,7 @@ public class Cavalier  extends Piece
 				|* |B N B| *|
 				|B  * B *  B|
 	*/
-	return true;		// JUSTE POUR LA COMPILATION
+		return true;		// JUSTE POUR LA COMPILATION
 	}
 
 	public String toString()

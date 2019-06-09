@@ -16,6 +16,7 @@ public class Case
           this.y = y;
         this.p = p;  // sinon par exemple je fais des if(p instanceof cavalier)
       }
+      
   public Case(Piece p)
   {
     this.p = p;
