@@ -2,8 +2,40 @@ public class Jouer
 {
     public static void main(String[] args)
     {
-    	Echiquier e = new Echiquier();
-    	System.out.println(e.afficher());
+   /*___________Saisie générale*/
+    	Scanner saisie = new Scanner(System.in);
+    	
+  /*____________Saisie des joueurs*/
+    	System.out.println("Joueur 1 : Votre nom ?");
+    	String j1nom = saisie.nextLine();
+    	Joueur j1 = new Joueur(j1nom,1);
+    	
+    	System.out.println("Joueur 2 : Votre nom ?");
+    	String j2nom = saisie.nextLine();
+    	Joueur j2 = new Joueur(j2nom,0);
+    	
+    	System.out.println(j1 + "\n" + j2);
+    	Partie pp = new Partie(j1,j2);    	
+/*______________Terrain*/
+    	
+    	System.out.println(pp.getTerrain().afficher());   	
+    	
+/*____________Saisie des déplacements*/
+    /*Piece a déplacer*/
+    	System.out.println(j1.getPrénom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
+    	int lig;
+    	String posPiece,pos;
+    	//Boucle se répète tant qu'on a pas saisie une case contenant une Piece
+    	do {
+    		posPiece = saisie.nextLine();
+    		lig = posPiece.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
+    		if(pp.getTerrain().etatCase(j1.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0))))
+    			System.out.println("Cette case ne contient pas de Piece, veuillez réessayer :");
+    			
+    	}while(pp.getTerrain().etatCase(j1.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0))));
+    	
+    	System.out.println("Position saisie -> "+posPiece+" : "+j1.getChoixPiece(pp.getTerrain(),lig,posPiece.charAt(0)));
+		
     }
 
     /*

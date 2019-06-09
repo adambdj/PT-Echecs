@@ -11,6 +11,14 @@ public class Partie
 	{
 		this.terrain=new Echiquier();
 	}
+
+	public Partie(Joueur j1, Joueur j2)
+	{
+		this.terrain=new Echiquier();
+		this.joueur1=j1;
+		this.joueur2=j2;
+		
+	}
 	
 //--------------Soumeya
 	/*Le jeu annonce un MAT lorsque le Roi est attaqué et qu’il n’y a aucune possibilité de le sauver.*/
@@ -71,6 +79,15 @@ public class Partie
 	public void setTerrain(Echiquier nouvTerrain)
 	{
 		this.terrain = nouvTerrain;
+	}
+
+	
+	public Joueur getJoueur1() {
+		return this.joueur1;
+	}
+	
+	public Joueur getJoueur2() {
+		return this.joueur2;
 	}
 	
 }

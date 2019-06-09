@@ -8,26 +8,18 @@ public class Reine extends Piece
 	{
 		super();
 		if(this.getCouleur() == 0)		// si la pièce est noire
-		{
 			this.forme = "D";
-		}
 		else							// si la pièce est blanche
-		{
 			this.forme = "D";
-		}
 	}
 
 	public Reine(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
-		{
 			this.forme = "D";			// si la pièce est noire
-		}
 		else
-		{
 			this.forme = "D";			// si la pièce est blanche
-		}
 	}
 
 	public String getForme()
@@ -35,7 +27,7 @@ public class Reine extends Piece
 		return this.forme;
 	}
 
-	public void deplacerPiece()
+	public void deplacerPiece(Echiquier e,int i, int j)
 	{
 	}
 
@@ -44,7 +36,23 @@ public class Reine extends Piece
 	//Pareil que le roi et si la case désigné = caseVide : True
 	public boolean verifDeplacement(Echiquier e)
 	{
-		return true;		// JUSTE POUR LA COMPILATION
+		if(this.mouvementPossible(e))
+			return true;
+		return false ;	
+	}
+	
+	public boolean mouvementPossible(Echiquier e) {
+		int x =this.getPosX();
+		int y = this.getPosY();
+		
+		if(super.mouvementDiagonal(e, x, y) )
+			return true;
+		else if (super.mouvementHorizontal(e, x, y) )
+			return true;
+		else if(super.mouvementVertical(e, x, y))
+			return true;
+			
+		return false;
 	}
 	public String toString()
 	{
