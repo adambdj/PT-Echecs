@@ -80,7 +80,7 @@ public class Joueur
 	}
 	
 	public String toString() {
-		return "Joueur "+this.getPrénom()+" posséde les pieces "+this.coul();
+		return "Joueur " + this.getPrenom() + " posséde les pièces " + this.coul();
 	}
 
 }

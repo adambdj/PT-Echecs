@@ -22,7 +22,7 @@ public class Jouer
     	
 /*____________Saisie des déplacements*/
     /*Piece a déplacer*/
-    	System.out.println(j1.getPrénom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
+    	System.out.println(j1.getPrenom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
     	int lig;
     	String posPiece,pos;
     	//Boucle se répète tant qu'on a pas saisie une case contenant une Piece
