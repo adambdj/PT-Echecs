@@ -94,6 +94,7 @@ public abstract class Piece
 
    //Pour déplacer une piece - Fonctionne pour toute les pieces 
     public void deplacerPieces(Echiquier e, Case depart, Case arrive) {
+    //Mettre des EXCEPTIONS !
       if(depart.getPiece().verifDeplacement(e))
       {
         if( (!(depart.estVide())) && arrive.estVide()) {
