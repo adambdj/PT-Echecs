@@ -9,12 +9,11 @@ public class Joueur
 
 	public Joueur(String p, int c)
 	{
-		this.prenom = p;
-		this.couleur = c;
+		this.prenom=p;
+		this.couleur=c;
 	}
 
-	public int convertion(char lettre)
-	{
+	public int convertion(char lettre) {
 		if (lettre == 'A' )
 			return 0;
 		else if (lettre == 'B')
@@ -29,14 +28,13 @@ public class Joueur
 			return 5;
 		else if (lettre == 'G')
 			return 6;
-		else 
-			return 7;	
+		else
+			return 7;
 	}
-	
 	public Case getChoixCase(Echiquier e , int ligne, char colonne) {
 		return e.getCase( ligne-1,this.convertion(colonne));
 	}
-	
+
 	public Piece getChoixPiece(Echiquier e , int ligne, char colonne) {
 		return e.getCase( ligne-1,this.convertion(colonne)).getPiece();
 	}
@@ -46,27 +44,27 @@ public class Joueur
 	{
 		return prenom;
 	}
-	
+
 	public void setPrenom(String prenom)
 	{
 		this.prenom = prenom;
 	}
-	
+
 	public int getCouleur()
 	{
 		return couleur;
 	}
-	
+
 	public void setCouleur(int couleur)
 	{
 		this.couleur = couleur;
 	}
-	
+
 	public ArrayList<Piece> getTabPiece()
 	{
 		return tabPiece;
 	}
-	
+
 	public void setTabPiece(ArrayList<Piece> tabPiece)
 	{
 		this.tabPiece = tabPiece;
@@ -76,11 +74,11 @@ public class Joueur
 		String s ="";
 		if(this.couleur == 1)
 			s+="Blanche";
-		else 
+		else
 			s+="Noire";
 		return s ;
 	}
-	
+
 	public String toString() {
 		return "Joueur " + this.getPrenom() + " posséde les pièces " + this.coul();
 	}
