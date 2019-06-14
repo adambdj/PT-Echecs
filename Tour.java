@@ -47,9 +47,16 @@ public class Tour extends Piece
 		int departX = this.getPosX();
 		int departY = this.getPosY();
 
-		// i - departX == 1 || 
+		if(Math.abs(departX - i) <= 8 && Math.abs(departY - j) == 0 || Math.abs(departX - i == 0 && Math.abs(departY - j) <=8)
+		{
+			return true;
+		} 
 
-		return true;		// JUSTE POUR LA COMPILATION
+		else
+		{
+			return false;
+		}
+
 	}
 
 	public String toString()

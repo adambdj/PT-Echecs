@@ -9,11 +9,12 @@ public class Joueur
 
 	public Joueur(String p, int c)
 	{
-		this.prenom=p;
-		this.couleur=c;
+		this.prenom = p;
+		this.couleur = c;
 	}
 
-	public int convertion(char lettre) {
+	public int convertion(char lettre)
+	{
 		if (lettre == 'A' )
 			return 0;
 		else if (lettre == 'B')
@@ -31,6 +32,7 @@ public class Joueur
 		else 
 			return 7;	
 	}
+	
 	public Case getChoixCase(Echiquier e , int ligne, char colonne) {
 		return e.getCase( ligne-1,this.convertion(colonne));
 	}
