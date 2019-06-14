@@ -32,7 +32,7 @@ public class Jouer
     		posPiece = saisie.nextLine();
     		lig = posPiece.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
     		if(pp.getTerrain().etatCase(j1.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0))))
-    			System.out.println("Cette case ne contient pas de Piece, veuillez réessayer :");
+    			System.out.println("Cette case ne contient pas de Pièce, veuillez réessayer :");
     			
     	}while(pp.getTerrain().etatCase(j1.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0))));
     	

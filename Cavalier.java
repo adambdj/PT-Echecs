@@ -47,6 +47,16 @@ public class Cavalier  extends Piece
 		int departX = this.getPosX();
 		int departY = this.getPosY();
 
+		if( Math.abs(departX - i) == 2 && Math.abs(departY - j) == 1 || Math.abs(departX - i) == 1 && Math.abs(departY - j) ==2 )
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+
 
 		/* Vérifie tout les points en L :
 		si on prend la piece a déplacer comme orgine on a (i,j) (abscisse,ordonné) :
@@ -63,7 +73,6 @@ public class Cavalier  extends Piece
 				|* |B N B| *|
 				|B  * B *  B|
 	*/
-		return true;		// JUSTE POUR LA COMPILATION
 	}
 
 	public String toString()
