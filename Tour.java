@@ -1,6 +1,6 @@
 //La tour se déplace d'un nombre quelconque de cases horizontalement
 //	ou verticalement et peut sauter seulement par-dessus le Roi lors du roque.
-
+import java.math.*;
 public class Tour extends Piece
 {
 	private String forme;
@@ -47,11 +47,10 @@ public class Tour extends Piece
 		int departX = this.getPosX();
 		int departY = this.getPosY();
 
-		if(Math.abs(departX - i) <= 8 && Math.abs(departY - j) == 0 || Math.abs(departX - i == 0 && Math.abs(departY - j) <=8)
+		if(Math.abs(departX - i) <= 8 && Math.abs(departY - j) == 0 || Math.abs(departX - i ) == 0 && Math.abs(departY - j) <=8 )
 		{
 			return true;
-		} 
-
+		}
 		else
 		{
 			return false;
