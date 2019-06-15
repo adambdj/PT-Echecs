@@ -13,6 +13,12 @@ public class Joueur
 		this.couleur=c;
 	}
 
+	public Joueur(Joueur j)
+	{
+		this.prenom = j.getPrenom();
+		this.couleur = j.getCouleur();
+	}
+
 	public int convertion(char lettre) {
 		if (lettre == 'A' )
 			return 0;

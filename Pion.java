@@ -116,6 +116,9 @@ public class Pion  extends Piece
 		}
 		return false;
 	}
-
+	public String toString()
+	{
+		return super.toString() + " et la piece a la forme " + this.forme;
+	}
 
 }

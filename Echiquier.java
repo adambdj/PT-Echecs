@@ -10,6 +10,17 @@ public class Echiquier
 		this.initialiserPiecesBlanche();
 	}
 
+	public Echiquier(Echiquier e)
+	{
+		for (int i = 0; i < 8; i++)
+		{
+				for (int j = 0; j < 8; j++)
+				{
+						this.grille[i][j] = new Case(e.getCase(i,j).getPosX(),e.getCase(i,j).getPosY(),e.getCase(i,j).getPiece());
+				}
+		}
+	}
+
 	/* Initialise le tableau */
 	public void initialiser()
 	{
