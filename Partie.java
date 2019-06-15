@@ -8,7 +8,7 @@ public class Partie
 	private Echiquier terrain; //Une Partie est composé d'un Echequier
 	private Joueur joueur1;
 	private Joueur joueur2;
-
+	File fichier = new File("sauver.ser");
 
 	public Partie()
 	{
@@ -53,13 +53,13 @@ public class Partie
 	public void lancerPartie()
 	{
 	}
-
+/*
 	public void sauvegarderPartie(String fichier) throws IOException
 	{
 		BufferedWriter f = new BufferedWriter(new FileWriter(fichier,true));
-		f.write(this.joueur1.getPrenom() + " et a comme couleur " + this.joueur1.getCouleur());
+		f.write(this.joueur1.getPrenom() + "\t" + this.joueur1.getCouleur());
 		f.newLine();
-		f.write(this.joueur2.getPrenom() + " et a comme couleur " + this.joueur2.getCouleur());
+		f.write(this.joueur2.getPrenom() + "\t" +this.joueur2.getCouleur());
 		for (int i = 0; i < 8; i++)
 		{
 			for (int j = 0; j < 8; j++)
@@ -74,7 +74,20 @@ public class Partie
 	public void restaurerPartie(String fichier) throws IOException
 	{
 		BufferedReader f = new BufferedReader(new FileReader(fichier));
-
+		String r = f.readLine();
+		StringTokenizer st = new StringTokenizer(r,"\t");
+		String pr = st.nextToken();
+		int c = Int.parseInt(st.nextToken());
+		System.out.println(pr);
+	}
+*/
+	public void sauvegarderPartie()
+	{
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichier));
+		}catch(Exception e){
+			System.out.println("Le fichier n'est pas sauvegarde !!");
+		}
 	}
 
 	public void effacerTerrain()
