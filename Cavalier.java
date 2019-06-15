@@ -36,7 +36,6 @@ public class Cavalier  extends Piece
 	{
 		return this.forme;
 	}
-	
 
 	public void deplacerPiece()
 	{
