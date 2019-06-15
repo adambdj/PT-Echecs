@@ -19,7 +19,7 @@ public class Jouer
         System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
         Partie pp = new Partie(j1,j2);  
   /*___________Debut Partie*/
-        System.out.println("Voulez vous reprendre votre partie ?(O/N)");
+        /*System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
         if(rep.equals("0") || rep.equals("o"))
         {
@@ -30,7 +30,7 @@ public class Jouer
             }
         }
         else
-            System.out.println("C'est partie !");
+            System.out.println("C'est partie !");*/
 /*______________Terrain*/
 
         System.out.println(pp.getTerrain().afficher());
@@ -78,7 +78,7 @@ public class Jouer
             Case depart=j.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0));
             Case arrive=j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0));
 
-            if(pp.deplacerPieces(depart, arrive))
+            if(pp.deplacerPieces(depart,arrive))
             {
                 System.out.println("Piece deplace");
                 System.out.println(pp.getTerrain().afficher());
