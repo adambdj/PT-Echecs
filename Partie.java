@@ -61,6 +61,19 @@ public class Partie
 //-------------------
 
 
+   //Pour déplacer une piece - Fonctionne pour toute les pieces 
+    public void deplacerPieces(Case depart, Case arrive) {
+    //Mettre des EXCEPTIONS !
+      if(depart.getPiece().verifDeplacement(this.terrain))
+      {
+        if( (!(depart.estVide())) && arrive.estVide()) {
+          e.setCase(arrive, depart.getPiece());
+          depart.setPiece(null);
+        }
+      
+      } 
+    }
+  
 	public void lancerPartie()
 	{
 	}
