@@ -47,9 +47,33 @@ public class Partie
 		return joueur1;
 	}
 
+		/*Soumeya
+	 * Pour alterner les joueurs, j'utilise une variable int tours que j'incrémenterais 
+	 * a chaque tour. (tours = 1 au debut)
+	 * Si tour paire alors c'est le joueurs qui joue en 2 (les pieces noires)
+	 * Sinon impaire c'est le premier joueurs 
+	 */
+	public Joueur alternationJoueur(int tours, Joueur j1, Joueur j2) {
+		if(tours%2 == 0)//Paire
+			return j2;
+		return j1;
+	}
 //-------------------
 
 
+   //Pour déplacer une piece - Fonctionne pour toute les pieces 
+    public void deplacerPieces(Case depart, Case arrive) {
+    //Mettre des EXCEPTIONS !
+      if(depart.getPiece().verifDeplacement(this.terrain))
+      {
+        if( (!(depart.estVide())) && arrive.estVide()) {
+          e.setCase(arrive, depart.getPiece());
+          depart.setPiece(null);
+        }
+      
+      } 
+    }
+  
 	public void lancerPartie()
 	{
 	}
