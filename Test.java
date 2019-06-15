@@ -5,10 +5,13 @@ public class Test
   public static void main(String [] arg)
   {
     Partie p = new Partie(new Joueur("Salim",0), new Joueur("Rahim",1));
-
+    try{
     p.sauvegarderPartie();
 //    p.restaurerPartie("sauve.txt");
-
+}catch(Exception e)
+{
+  System.out.println(e);
+}
 /*___________Saisie générale*/
 
       //  Scanner saisie = new Scanner(System.in);

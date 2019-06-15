@@ -48,10 +48,10 @@ public class Partie
 	}
 
 		/*Soumeya
-	 * Pour alterner les joueurs, j'utilise une variable int tours que j'incrémenterais 
+	 * Pour alterner les joueurs, j'utilise une variable int tours que j'incrémenterais
 	 * a chaque tour. (tours = 1 au debut)
 	 * Si tour paire alors c'est le joueurs qui joue en 2 (les pieces noires)
-	 * Sinon impaire c'est le premier joueurs 
+	 * Sinon impaire c'est le premier joueurs
 	 */
 	public Joueur alternationJoueur(int tours, Joueur j1, Joueur j2) {
 		if(tours%2 == 0)//Paire
@@ -61,7 +61,7 @@ public class Partie
 //-------------------
 
 
-   //Pour déplacer une piece - Fonctionne pour toute les pieces 
+   //Pour déplacer une piece - Fonctionne pour toute les pieces
     public void deplacerPieces(Case depart, Case arrive) {
     //Mettre des EXCEPTIONS !
       if(depart.getPiece().verifDeplacement(this.terrain))
@@ -70,14 +70,14 @@ public class Partie
           e.setCase(arrive, depart.getPiece());
           depart.setPiece(null);
         }
-      
-      } 
+
+      }
     }
-  
+
 	public void lancerPartie()
 	{
 	}
-/*
+
 	public void sauvegarderPartie(String fichier) throws IOException
 	{
 		BufferedWriter f = new BufferedWriter(new FileWriter(fichier,true));
@@ -94,7 +94,7 @@ public class Partie
 		}
 		f.close();
 	}
-
+/*
 	public void restaurerPartie(String fichier) throws IOException
 	{
 		BufferedReader f = new BufferedReader(new FileReader(fichier));
@@ -104,7 +104,7 @@ public class Partie
 		int c = Int.parseInt(st.nextToken());
 		System.out.println(pr);
 	}
-*/
+
 	public void sauvegarderPartie()
 	{
 		try {
@@ -113,7 +113,7 @@ public class Partie
 			System.out.println("Le fichier n'est pas sauvegarde !!");
 		}
 	}
-
+*/
 	public void effacerTerrain()
 	{
 	}
