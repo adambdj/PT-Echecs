@@ -19,9 +19,7 @@ public class Joueur
 		this.couleur=j.couleur;
 	}
 	
-
-
-	public int convertion(char lettre) {
+	public int convertionC(char lettre) {
 		if (lettre == 'A' )
 			return 0;
 		else if (lettre == 'B')
@@ -36,15 +34,35 @@ public class Joueur
 			return 5;
 		else if (lettre == 'G')
 			return 6;
-		else
-			return 7;
-	}
-	public Case getChoixCase(Echiquier e , int ligne, char colonne) {
-		return e.getCase( ligne-1,this.convertion(colonne));
+		else 
+			return 7;	
 	}
 
+	public int convertionL(int ligne) {
+		if(ligne == 1)
+			return 7;
+		if (ligne == 2)
+			return 6;
+		if(ligne == 3)
+			return 5;
+		if(ligne == 4)
+			return 4;
+		if(ligne == 5)
+			return 3;
+		if(ligne == 6)
+			return 2;
+		if(ligne == 7)
+			return 1;
+	
+		return 0;
+	}
+	
+	public Case getChoixCase(Echiquier e , int ligne, char colonne) {
+		return e.getCase( this.convertionL(ligne),this.convertionC(colonne));
+	}
+	
 	public Piece getChoixPiece(Echiquier e , int ligne, char colonne) {
-		return e.getCase( ligne-1,this.convertion(colonne)).getPiece();
+		return e.getCase(this.convertionL(ligne),this.convertionC(colonne)).getPiece();
 	}
 
 	//Les accesseurs
