@@ -36,6 +36,10 @@ public class Case
 
     /* _________________________ACCESSEUR*/
 
+    public String getForme()
+    {
+      return this.p.getForme();
+    }
     public Piece getPiece()
       {
     return this.p;
@@ -70,7 +74,7 @@ public class Case
 
   public String toString()
   {
-    return "Case["+this.x + ","+this.y+ "]"+ this.p;
+    return "Case["+this.x + ","+this.y+ "]"+ this.P;
   }
 
 

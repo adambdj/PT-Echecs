@@ -89,6 +89,7 @@ public class Partie
 		f.write(this.joueur1.getPrenom() + "\t" + this.joueur1.getCouleur());
 		f.newLine();
 		f.write(this.joueur2.getPrenom() + "\t" +this.joueur2.getCouleur());
+		System.out.println(this.terrain.getCase(0,7).getPiece().getForme());
 		for (int i = 0; i < 8; i++)
 		{
 			for (int j = 0; j < 8; j++)
@@ -103,6 +104,8 @@ public class Partie
 	public void restaurerPartie(String fichier) throws IOException
 	{
 		BufferedReader f = new BufferedReader(new FileReader(fichier));
+		int i = 0;
+		int v = 0;
 		String r = f.readLine();
 		StringTokenizer st = new StringTokenizer(r,"\t");
 		String j = st.nextToken();	// recupere le prenom du joueur1
@@ -114,22 +117,12 @@ public class Partie
 		c = Integer.parseInt(st.nextToken()); //	recupere la couleur du joueur2
 		this.joueur2 = new Joueur(j,c); // creer le joueur 2
 		r = f.readLine();
-		this.terrain = new Echiquier();
-		String np = "";
+		String nomForme;
 		while (r != null) // tant qu'il y a encore une ligne
 		{
-			st = new StringTokenizer(r,"\t");
-			np = st.nextToken();
-			int i = Integer.parseInt(st.nextToken());
-			int v = Integer.parseInt(st.nextToken());
-			System.out.println(i + " et " + v);
-			if (np.equals("Pion"))
-			{
-				System.out.println(" test 1");
-				this.terrain.setCase(this.terrain.getCase(i,v),new Pion());
-				r = f.readLine();
-			}
-			this.terrain.setCase(this.terrain.getCase(i,v),null);
+			StringTokenizer st = new StringTokenizer(r,"\t");
+			nomForme = st.nextToken();
+
 			r = f.readLine();
 		}
 	}

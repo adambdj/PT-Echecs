@@ -1,6 +1,6 @@
 import java.io.*;
 
-public abstract class Piece 
+public abstract class Piece
 {
   private int couleur;	// 0 pour noir, 1 pour blanc
   private int x;	// position x

@@ -38,20 +38,20 @@ public class Reine extends Piece
 	{
 		if(this.mouvementPossible(e))
 			return true;
-		return false ;	
+		return false ;
 	}
-	
+
 	public boolean mouvementPossible(Echiquier e) {
 		int x =this.getPosX();
 		int y = this.getPosY();
-		
+
 		if(super.mouvementDiagonal(e, x, y) )
 			return true;
 		else if (super.mouvementHorizontal(e, x, y) )
 			return true;
 		else if(super.mouvementVertical(e, x, y))
 			return true;
-			
+
 		return false;
 	}
 	public String toString()
