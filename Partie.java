@@ -2,13 +2,14 @@
 //une partie est composé d'un échiquier
 import java.io.*;
 import java.util.*;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Partie
 {
 	private Echiquier terrain; //Une Partie est composé d'un Echequier
 	private Joueur joueur1;
 	private Joueur joueur2;
-	File fichier = new File("sauver.ser");
 
 	public Partie()
 	{
@@ -80,8 +81,10 @@ public class Partie
 	{
 	}
 
+	/*
 	public void sauvegarderPartie(String fichier) throws IOException
 	{
+
 		BufferedWriter f = new BufferedWriter(new FileWriter(fichier,true));
 		f.write(this.joueur1.getPrenom() + "\t" + this.joueur1.getCouleur());
 		f.newLine();
@@ -91,31 +94,58 @@ public class Partie
 			for (int j = 0; j < 8; j++)
 			{
 				f.newLine();
-				f.write(this.terrain.getCase(i,j).getPiece() + " ");
+				f.write(this.terrain.getCase(i,j).getPiece() + "\t" + this.terrain.getCase(i,j).getPosX() + "\t" + this.terrain.getCase(i,j).getPosY());
 			}
 		}
 		f.close();
 	}
-/*
+
 	public void restaurerPartie(String fichier) throws IOException
 	{
 		BufferedReader f = new BufferedReader(new FileReader(fichier));
 		String r = f.readLine();
 		StringTokenizer st = new StringTokenizer(r,"\t");
-		String pr = st.nextToken();
-		int c = Int.parseInt(st.nextToken());
-		System.out.println(pr);
+		String j = st.nextToken();	// recupere le prenom du joueur1
+		int c = Integer.parseInt(st.nextToken()); // recupere la couleur du joueur1
+		this.joueur1 = new Joueur(j,c);// creer le joueur 2
+		r = f.readLine();
+		st = new StringTokenizer(r,"\t");
+		j = st.nextToken();	//	recupere le prenom du joueur2
+		c = Integer.parseInt(st.nextToken()); //	recupere la couleur du joueur2
+		this.joueur2 = new Joueur(j,c); // creer le joueur 2
+		r = f.readLine();
+		this.terrain = new Echiquier();
+		String np = "";
+		while (r != null) // tant qu'il y a encore une ligne
+		{
+			st = new StringTokenizer(r,"\t");
+			np = st.nextToken();
+			int i = Integer.parseInt(st.nextToken());
+			int v = Integer.parseInt(st.nextToken());
+			System.out.println(i + " et " + v);
+			if (np.equals("Pion"))
+			{
+				System.out.println(" test 1");
+				this.terrain.setCase(this.terrain.getCase(i,v),new Pion());
+				r = f.readLine();
+			}
+			this.terrain.setCase(this.terrain.getCase(i,v),null);
+			r = f.readLine();
+		}
 	}
 
 	public void sauvegarderPartie()
 	{
 		try {
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichier));
+				File fichier = new File("sauvegarder.ser");
+				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichier));
+				oos.writeObject(this.terrain);
+				oos.close();
 		}catch(Exception e){
 			System.out.println("Le fichier n'est pas sauvegarde !!");
 		}
 	}
-*/
+	*/
 	public void effacerTerrain()
 	{
 	}

@@ -1,4 +1,6 @@
-public abstract class Piece
+import java.io.*;
+
+public abstract class Piece 
 {
   private int couleur;	// 0 pour noir, 1 pour blanc
   private int x;	// position x
@@ -24,12 +26,12 @@ public abstract class Piece
   }
 
   /*Methode utile pour le Roi, Reine, Tour
-   * 
-   * 
+   *
+   *
    * SOUMEYA
    */
   public boolean mouvementDiagonal(Echiquier e, int i, int j) {
-   
+
     if(j+1>7) //Si je suis hors terrain - côté droit
     {
       if(e.etatCase(e.getCase(i+1, j-1)))
@@ -44,7 +46,7 @@ public abstract class Piece
       else if (e.etatCase(e.getCase(i+1, j+1)) )
         return true;
     }
-    else 
+    else
     {
       if(e.etatCase(e.getCase(i+1, j-1)))
       return true;
@@ -55,9 +57,9 @@ public abstract class Piece
       else if ( e.etatCase(e.getCase(i+1, j+1)))
         return true;
     }
-    return false;   
+    return false;
   }
-  
+
   public boolean mouvementVertical(Echiquier e, int i, int j) {
     if(i+1>7) //Si je suis hors terrain - côté bas
       if(e.etatCase(e.getCase(i-1, j)))
@@ -74,7 +76,7 @@ public abstract class Piece
     }
     return false;
   }
-  
+
   public boolean mouvementHorizontal(Echiquier e, int i, int j) {
     if(j+1>7) //Si je suis hors terrain - côté droit
       if(e.etatCase(e.getCase(i, j-1)))
@@ -82,7 +84,7 @@ public abstract class Piece
     else if (j-1<0) //Si je suis hors terrain - côté gauche
       if(e.etatCase(e.getCase(i, j+1)))
         return true;
-    else 
+    else
     {
       if(e.etatCase(e.getCase(i, j-1)))
         return true;
@@ -92,7 +94,7 @@ public abstract class Piece
     return false;
   }
 
-   //Pour déplacer une piece - Fonctionne pour toute les pieces 
+   //Pour déplacer une piece - Fonctionne pour toute les pieces
     public void deplacerPieces(Echiquier e, Case depart, Case arrive) {
     //Mettre des EXCEPTIONS !
       if(depart.getPiece().verifDeplacement(e))
@@ -101,10 +103,10 @@ public abstract class Piece
           e.setCase(arrive, depart.getPiece());
           depart.setPiece(null);
         }
-      
-      } 
+
+      }
     }
-  
+
 
 
     /* GETTERS */

@@ -1,0 +1,196 @@
+Salim	0
+Rahim	1
+Piece [0;0]couleur : noir et la piece a la forme T	0	0
+Piece [0;1]couleur : noir et la piece a la forme C	0	1
+Piece [0;2]couleur : noir et la piece a la forme F	0	2
+Piece [0;3]couleur : noir et la piece a la forme D	0	3
+Piece [0;4]couleur : noir et la piece a la forme R	0	4
+Piece [0;5]couleur : noir et la piece a la forme F	0	5
+Piece [0;6]couleur : noir et la piece a la forme C	0	6
+Piece [0;7]couleur : noir et la piece a la forme T	0	7
+Piece [1;0]couleur : noir et la piece a la forme P	1	0
+Piece [1;1]couleur : noir et la piece a la forme P	1	1
+Piece [1;2]couleur : noir et la piece a la forme P	1	2
+Piece [1;3]couleur : noir et la piece a la forme P	1	3
+Piece [1;4]couleur : noir et la piece a la forme P	1	4
+Piece [1;5]couleur : noir et la piece a la forme P	1	5
+Piece [1;6]couleur : noir et la piece a la forme P	1	6
+Piece [1;7]couleur : noir et la piece a la forme P	1	7
+null	2	0
+null	2	1
+null	2	2
+null	2	3
+null	2	4
+null	2	5
+null	2	6
+null	2	7
+null	3	0
+null	3	1
+null	3	2
+null	3	3
+null	3	4
+null	3	5
+null	3	6
+null	3	7
+null	4	0
+null	4	1
+null	4	2
+null	4	3
+null	4	4
+null	4	5
+null	4	6
+null	4	7
+null	5	0
+null	5	1
+null	5	2
+null	5	3
+null	5	4
+null	5	5
+null	5	6
+null	5	7
+Piece [6;0]couleur : blanc et la piece a la forme P	6	0
+Piece [6;1]couleur : blanc et la piece a la forme P	6	1
+Piece [6;2]couleur : blanc et la piece a la forme P	6	2
+Piece [6;3]couleur : blanc et la piece a la forme P	6	3
+Piece [6;4]couleur : blanc et la piece a la forme P	6	4
+Piece [6;5]couleur : blanc et la piece a la forme P	6	5
+Piece [6;6]couleur : blanc et la piece a la forme P	6	6
+Piece [6;7]couleur : blanc et la piece a la forme P	6	7
+Piece [7;0]couleur : blanc et la piece a la forme T	7	0
+Piece [7;1]couleur : blanc et la piece a la forme C	7	1
+Piece [7;2]couleur : blanc et la piece a la forme F	7	2
+Piece [7;3]couleur : blanc et la piece a la forme D	7	3
+Piece [7;4]couleur : blanc et la piece a la forme R	7	4
+Piece [7;5]couleur : blanc et la piece a la forme F	7	5
+Piece [7;6]couleur : blanc et la piece a la forme C	7	6
+Piece [7;7]couleur : blanc et la piece a la forme T	7	7Salim	0
+Rahim	1
+Piece [0;0]couleur : noir et la piece a la forme T	0	0
+Piece [0;1]couleur : noir et la piece a la forme C	0	1
+Piece [0;2]couleur : noir et la piece a la forme F	0	2
+Piece [0;3]couleur : noir et la piece a la forme D	0	3
+Piece [0;4]couleur : noir et la piece a la forme R	0	4
+Piece [0;5]couleur : noir et la piece a la forme F	0	5
+Piece [0;6]couleur : noir et la piece a la forme C	0	6
+Piece [0;7]couleur : noir et la piece a la forme T	0	7
+Piece [1;0]couleur : noir et la piece a la forme P	1	0
+Piece [1;1]couleur : noir et la piece a la forme P	1	1
+Piece [1;2]couleur : noir et la piece a la forme P	1	2
+Piece [1;3]couleur : noir et la piece a la forme P	1	3
+Piece [1;4]couleur : noir et la piece a la forme P	1	4
+Piece [1;5]couleur : noir et la piece a la forme P	1	5
+Piece [1;6]couleur : noir et la piece a la forme P	1	6
+Piece [1;7]couleur : noir et la piece a la forme P	1	7
+null	2	0
+null	2	1
+null	2	2
+null	2	3
+null	2	4
+null	2	5
+null	2	6
+null	2	7
+null	3	0
+null	3	1
+null	3	2
+null	3	3
+null	3	4
+null	3	5
+null	3	6
+null	3	7
+null	4	0
+null	4	1
+null	4	2
+null	4	3
+null	4	4
+null	4	5
+null	4	6
+null	4	7
+null	5	0
+null	5	1
+null	5	2
+null	5	3
+null	5	4
+null	5	5
+null	5	6
+null	5	7
+Piece [6;0]couleur : blanc et la piece a la forme P	6	0
+Piece [6;1]couleur : blanc et la piece a la forme P	6	1
+Piece [6;2]couleur : blanc et la piece a la forme P	6	2
+Piece [6;3]couleur : blanc et la piece a la forme P	6	3
+Piece [6;4]couleur : blanc et la piece a la forme P	6	4
+Piece [6;5]couleur : blanc et la piece a la forme P	6	5
+Piece [6;6]couleur : blanc et la piece a la forme P	6	6
+Piece [6;7]couleur : blanc et la piece a la forme P	6	7
+Piece [7;0]couleur : blanc et la piece a la forme T	7	0
+Piece [7;1]couleur : blanc et la piece a la forme C	7	1
+Piece [7;2]couleur : blanc et la piece a la forme F	7	2
+Piece [7;3]couleur : blanc et la piece a la forme D	7	3
+Piece [7;4]couleur : blanc et la piece a la forme R	7	4
+Piece [7;5]couleur : blanc et la piece a la forme F	7	5
+Piece [7;6]couleur : blanc et la piece a la forme C	7	6
+Piece [7;7]couleur : blanc et la piece a la forme T	7	7Salim	0
+Rahim	1
+Piece [0;0]couleur : noir et la piece a la forme T	0	0
+Piece [0;1]couleur : noir et la piece a la forme C	0	1
+Piece [0;2]couleur : noir et la piece a la forme F	0	2
+Piece [0;3]couleur : noir et la piece a la forme D	0	3
+Piece [0;4]couleur : noir et la piece a la forme R	0	4
+Piece [0;5]couleur : noir et la piece a la forme F	0	5
+Piece [0;6]couleur : noir et la piece a la forme C	0	6
+Piece [0;7]couleur : noir et la piece a la forme T	0	7
+Piece [1;0]couleur : noir et la piece a la forme P	1	0
+Piece [1;1]couleur : noir et la piece a la forme P	1	1
+Piece [1;2]couleur : noir et la piece a la forme P	1	2
+Piece [1;3]couleur : noir et la piece a la forme P	1	3
+Piece [1;4]couleur : noir et la piece a la forme P	1	4
+Piece [1;5]couleur : noir et la piece a la forme P	1	5
+Piece [1;6]couleur : noir et la piece a la forme P	1	6
+Piece [1;7]couleur : noir et la piece a la forme P	1	7
+null	2	0
+null	2	1
+null	2	2
+null	2	3
+null	2	4
+null	2	5
+null	2	6
+null	2	7
+null	3	0
+null	3	1
+null	3	2
+null	3	3
+null	3	4
+null	3	5
+null	3	6
+null	3	7
+null	4	0
+null	4	1
+null	4	2
+null	4	3
+null	4	4
+null	4	5
+null	4	6
+null	4	7
+null	5	0
+null	5	1
+null	5	2
+null	5	3
+null	5	4
+null	5	5
+null	5	6
+null	5	7
+Piece [6;0]couleur : blanc et la piece a la forme P	6	0
+Piece [6;1]couleur : blanc et la piece a la forme P	6	1
+Piece [6;2]couleur : blanc et la piece a la forme P	6	2
+Piece [6;3]couleur : blanc et la piece a la forme P	6	3
+Piece [6;4]couleur : blanc et la piece a la forme P	6	4
+Piece [6;5]couleur : blanc et la piece a la forme P	6	5
+Piece [6;6]couleur : blanc et la piece a la forme P	6	6
+Piece [6;7]couleur : blanc et la piece a la forme P	6	7
+Piece [7;0]couleur : blanc et la piece a la forme T	7	0
+Piece [7;1]couleur : blanc et la piece a la forme C	7	1
+Piece [7;2]couleur : blanc et la piece a la forme F	7	2
+Piece [7;3]couleur : blanc et la piece a la forme D	7	3
+Piece [7;4]couleur : blanc et la piece a la forme R	7	4
+Piece [7;5]couleur : blanc et la piece a la forme F	7	5
+Piece [7;6]couleur : blanc et la piece a la forme C	7	6
+Piece [7;7]couleur : blanc et la piece a la forme T	7	7

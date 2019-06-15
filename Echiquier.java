@@ -1,5 +1,7 @@
 import java.util.*;
-public class Echiquier
+import java.io.*;
+
+public class Echiquier 
 {
 	private Case[][] grille;
 
