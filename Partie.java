@@ -67,7 +67,7 @@ public class Partie
       if(depart.getPiece().verifDeplacement(this.terrain))
       {
         if( (!(depart.estVide())) && arrive.estVide()) {
-          e.setCase(arrive, depart.getPiece());
+          this.terrain.setCase(arrive, depart.getPiece());
           depart.setPiece(null);
         }
 
