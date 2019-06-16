@@ -183,7 +183,7 @@ public class Echiquier
 				{
 						element += "*   ";
 						if(this.etatCase(this.getCase(i,j)))
-							element += ".   ";
+							element += "    ";
 						else
 							element += this.getCase(i,j).getPiece().getForme()+"   ";
 				}
