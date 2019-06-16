@@ -2,8 +2,14 @@ import java.util.Scanner;
 
 public class Jouer
 {
+<<<<<<< HEAD
      public static void main(String[] args)
     {
+=======
+    public static void main(String[] args)
+    {
+
+>>>>>>> 5c197def15764c332f66d35ca0958ee00a80e70c
    /*___________Saisie générale*/
         Scanner saisie = new Scanner(System.in);
 
@@ -25,13 +31,15 @@ public class Jouer
         Partie pp = new Partie(j1,j2);  
 >>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
   /*___________Debut Partie*/
-        System.out.println("Voulez vous reprendre votre partie ?(O/N)");
+       /* System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
         if(rep.equals("0") || rep.equals("o"))
         {
-            try {
+            try
+            {
                 pp.restaurerPartie("C:/Users/soume/eclipse-workspace/JeuDames/src/sauv.txt");
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
