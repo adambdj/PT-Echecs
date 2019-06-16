@@ -15,9 +15,15 @@ public class Jouer
         System.out.println("Joueur 2 : Votre nom ?");
         String j2nom = saisie.nextLine();
         Joueur j2 = new Joueur(j2nom,0);
+<<<<<<< HEAD
 
         System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
         Partie pp = new Partie(j1,j2);
+=======
+        
+        System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
+        Partie pp = new Partie(j1,j2);  
+>>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
   /*___________Debut Partie*/
         System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
@@ -42,7 +48,11 @@ public class Jouer
         while(quit.equals("N") || quit.equals("n"))
         {
             Joueur j = pp.alternationJoueur(tours, j1, j2);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
             System.out.println(j.getPrenom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
             int ligi,lig;
             String posPiece,pos;
@@ -62,7 +72,11 @@ public class Jouer
 
         /*Case où se déplacer   */
             //Boucle se répète tant qu'on a pas saisie une case vide
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
             System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
             do {
 
