@@ -8,7 +8,7 @@ public class Test
     Case depart = e.getCase(6,0);
     Case arrive = e.getCase(4,0);
 
-
+    System.out.println(e.afficher());
     System.out.println(depart);
     System.out.println(arrive);
     System.out.println(depart.getPiece());
