@@ -14,9 +14,11 @@ public class Test
     System.out.println(arrive);
 
     System.out.println(depart.getPiece().verifDeplacement(e, arrive));
-    if(depart.getPiece().deplacerPieces(e,arrive)) {
+    if(depart.getPiece().deplacerPieces(e,arrive))
+    {
       System.out.println(e.afficher());
     }
+    
     e.setCase(arrive, depart.getPiece());
     depart.setPiece(null);
     System.out.println(e.afficher());
@@ -25,8 +27,4 @@ public class Test
 
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 38dfdb8370c5a37fbda16bc88fda4c2ecc06d760
