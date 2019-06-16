@@ -4,33 +4,28 @@ public class Test
 {
   public static void main(String [] arg)
   {
-        Echequier e = new Echequier();
-    
-    
-    
+        Echiquier e = new Echiquier();
+
+
+
     //Pion p = (Pion) depart.getPiece();
-    
-    Piece t = new Pion(3,1,0);
-    e.setCase(e.getCase(3, 1), t);
-    
-    Piece test = new Pion(2,0,1);
+
+    Piece t = new Pion(1,1,0);
+    e.setCase(e.getCase(1, 1), t);
+
+    Piece test = new Reine(2,0,1);
     e.setCase(e.getCase(2, 0), test);
-    
-    
-    
-    
-    Case depart = e.getCase(t.getPosX(), t.getPosY());
-    Case arrive = e.getCase(test.getPosX(), test.getPosY());
-    
+    Case arrive = e.getCase(t.getPosX(), t.getPosY());
+    Case depart = e.getCase(test.getPosX(), test.getPosY());
+
     System.out.println(e.afficher());
-    
     System.out.println(depart);
     System.out.println(arrive);
-    //p.deplacementPossible(e,depart,arrive); 
-    System.out.print(t.verifDeplacement(e,arrive));
+    //p.deplacementPossible(e,depart,arrive);
+    test.boucleDiagonale(e,depart,arrive);
     //p.positionInitiale(e, depart, arrive);
-    
-    
+
+
   }
 
 /*___________Saisie générale*/
@@ -75,6 +70,4 @@ public class Test
     {
       System.out.println(ex);
     }*/
-
-  }
 }
