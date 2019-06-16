@@ -50,8 +50,10 @@ public class Fou extends Piece
 	//Si la piece est un fou
 	//Si il n'y a personne dur ma diagonale et si la case désigné et une caseVide : True
 
-	public boolean verifDeplacement(Echiquier e, int i, int j)
+	public boolean verifDeplacement(Echiquier e, Case arrive)
 	{
+		int i = arrive.getPosX();
+		int j = arrive.getPosY();
 		boolean p = false;
 		int departX = this.getPosX();	// position x de la piece
 		int departY = this.getPosY();	// position y de la piece
