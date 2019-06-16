@@ -83,7 +83,7 @@ public abstract class Piece
     }
   /*___________________FIN DES SETTERS	*/
 
-    // Deplacer piece a redefinir dans les objects tour, cavalier etc...
+    /*// Deplacer piece a redefinir dans les objects tour, cavalier etc...
      public void deplacerPiece(Echiquier e, Case arrive)
      {
        System.out.println("test 1");
@@ -100,7 +100,7 @@ public abstract class Piece
           e.setCase(e.getCase(x,y),null);
           System.out.println(e.getCase(x,y));
        }
-     }
+     }*/
 
 
   /* Methode toString */
