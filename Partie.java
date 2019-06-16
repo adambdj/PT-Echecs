@@ -62,20 +62,6 @@ public class Partie
 //-------------------
 
 
-   //Pour déplacer une piece - Fonctionne pour toute les pieces
-    public boolean deplacerPieces(Case depart, Case arrive) {
-    //Mettre des EXCEPTIONS !
-      if(depart.getPiece().verifDeplacement(this.terrain,arrive))
-      {
-        if( (!(depart.estVide())) && arrive.estVide()) {
-          this.terrain.setCase(arrive, depart.getPiece());
-          depart.setPiece(null);
-          return true;
-        }
-      }
-      return false;
-    }
-
 	public void lancerPartie()
 	{
 	}

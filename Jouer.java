@@ -78,7 +78,7 @@ public class Jouer
             Case depart=j.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0));
             Case arrive=j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0));
 
-            if(pp.deplacerPieces(depart,arrive))
+            if(depart.getPiece().deplacerPieces(pp.getTerrain(),arrive))
             {
                 System.out.println("Piece deplace");
                 System.out.println(pp.getTerrain().afficher());
