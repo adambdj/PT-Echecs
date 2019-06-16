@@ -73,11 +73,11 @@ public class Reine extends Piece
 		int y = depart.getPosY() - 1;
 		int i = arrive.getPosX();
 		int j = arrive.getPosY();
-		while(x > i || y < j)
+		while(x >= i || y <= j)
 		{
 			if (e.etatCase(e.getCase(x,y)))
 			{
-				System.out.println("Case i : " + x + " j : " + j);
+				System.out.println("Case i : " + x + " j : " + y);
 			}
 			else
 			if (e.etatCase(e.getCase(x,y)) == false)

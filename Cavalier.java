@@ -42,10 +42,12 @@ public class Cavalier  extends Piece
 	}
 
 
-	public boolean verifDeplacement(Echiquier e, int i, int j)
+	public boolean verifDeplacement(Echiquier e, Case arrive)
 	{
 		int departX = this.getPosX();
 		int departY = this.getPosY();
+		int i = arrive.getPosX();
+		int j = arrive.getPosY();
 
 		if( Math.abs(departX - i) == 2 && Math.abs(departY - j) == 1 || Math.abs(departX - i) == 1 && Math.abs(departY - j) ==2 )
 		{

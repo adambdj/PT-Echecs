@@ -17,16 +17,8 @@ public abstract class Piece
 
   public void boucleDiagonale(Echiquier e, Case depart, Case arrive) {}
   public boolean deplacementValide(Echiquier e,Case arrive){return true;}
-  public boolean verifDeplacement(Echiquier e, int i, int j)
-  {
-    return true;
-  }
-  public boolean verifDeplacement(Echiquier e)
-  {
-    return true;
-  }
 
-    public boolean verifDeplacement(Echiquier e, Case arrive)
+  public boolean verifDeplacement(Echiquier e, Case arrive)
   {
     return true;
   }
@@ -145,12 +137,14 @@ public abstract class Piece
   /*___________________FIN DES SETTERS	*/
 
     // Deplacer piece a redefinir dans les objects tour, cavalier etc...
-     public void deplacerPiece(Echiquier e, int i, int j)
+     public void deplacerPiece(Echiquier e, Case arrive)
      {
-       if (this.verifDeplacement(e,i,j))
+       if (this.verifDeplacement(e,arrive))
        {
           int x = this.getPosX();
           int y = this.getPosY();
+          int i = arrive.getPosX();
+          int j = arrive.getPosY();
           e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).getPiece());
        }
      }
