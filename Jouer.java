@@ -4,8 +4,6 @@ public class Jouer
 {
     public static void main(String[] args)
     {
-     public static void main(String[] args)
-    {
    /*___________Saisie générale*/
         Scanner saisie = new Scanner(System.in);
             
@@ -21,7 +19,7 @@ public class Jouer
         System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
         Partie pp = new Partie(j1,j2);  
   /*___________Debut Partie*/
-        System.out.println("Voulez vous reprendre votre partie ?(O/N)");
+       /* System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
         if(rep.equals("0") || rep.equals("o"))
         {
