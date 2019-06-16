@@ -52,21 +52,23 @@ public class Pion  extends Piece
 		{
 			if(this.positionInitialePion())
 			{
+				System.out.print("test 1");
 				if(depart.caseDevant(arrive))
 					//System.out.println("Pos initiale + devant ok");
 					return true;
-				
+				/*
 				if(arrive.getPosX()>depart.getPosX()+2)
 					return false;
-				
-				
-				if(depart.getPiece().getCouleur() == 0) 
+					*/
+				System.out.println("test 2");
+				if(depart.getPiece().getCouleur() == 0)
 					if(arrive.equals(e.getCase(depart.getPosX()+2, depart.getPosY()))
 							&& e.getCase(depart.getPosX()+1, depart.getPosY()).estVide())
 						//System.out.println("case vide devant + ok");
 						return true;
-				
-				else 
+
+				else
+					System.out.println("test 3");
 					if(arrive.equals(e.getCase(depart.getPosX()-2, depart.getPosY()))
 							&& e.getCase(depart.getPosX()-1, depart.getPosY()).estVide())
 						//System.out.println("case vide devant + ok");
@@ -74,19 +76,20 @@ public class Pion  extends Piece
 			}
 			else
 			{
-				
-				if(depart.caseDevant(arrive)) 
-					//System.out.println("devant ok");	
+
+				if(depart.caseDevant(arrive))
+					//System.out.println("devant ok");
 					return true;
-				
-				if(arrive.getPosX()>depart.getPosX()+1)
+
+				if(arrive.getPosX()>depart.getPosX()+1 || arrive.getPosX()>depart.getPosX()-1)
 					return false;
 			}
 		}
 		//Pour le cas de manger
-		if(depart.manger(arrive))
+		else
+			if(depart.manger(arrive))
 			return true;
-		
+
 		return false;
 			//System.out.println("arrive pas vide");
 	}
