@@ -4,8 +4,7 @@ public class Jouer
 {
     public static void main(String[] args)
     {
-     public static void main(String[] args)
-    {
+
    /*___________Saisie générale*/
         Scanner saisie = new Scanner(System.in);
             
@@ -18,16 +17,18 @@ public class Jouer
         String j2nom = saisie.nextLine();
         Joueur j2 = new Joueur(j2nom,0);
         
-        System.out.println(j1.getPrénom()+"------> Pieces blanche" +"\n" +j2.getPrénom()+"------> Pieces noire");
+        System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
         Partie pp = new Partie(j1,j2);  
   /*___________Debut Partie*/
         System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
         if(rep.equals("0") || rep.equals("o"))
         {
-            try {
+            try
+            {
                 pp.restaurerPartie("C:/Users/soume/eclipse-workspace/JeuDames/src/sauv.txt");
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -45,7 +46,7 @@ public class Jouer
         {
             Joueur j = pp.alternationJoueur(tours, j1, j2);
             
-            System.out.println(j.getPrénom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
+            System.out.println(j.getPrenom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
             int ligi,lig;
             String posPiece,pos;
             //Boucle se répète tant qu'on a pas saisie une case contenant une Piece
@@ -65,7 +66,7 @@ public class Jouer
         /*Case où se déplacer   */
             //Boucle se répète tant qu'on a pas saisie une case vide
             
-            System.out.println(j.getPrénom() + " où voulez vous vous déplacer?");
+            System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
             do {
                 
                 pos = saisie.nextLine();
