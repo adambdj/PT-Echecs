@@ -4,20 +4,35 @@ public class Test
 {
   public static void main(String [] arg)
   {
-    Echiquier e = new Echiquier();
-
-    Piece test = new Pion(3,0,0);
-    e.setCase(e.getCase(3, 0), test);
-
-    Case depart = e.getCase(test.getPosX(), test.getPosY());
-    Case arrive = e.getCase(4, 0);
-
+        Echequier e = new Echequier();
+    
+    
+    
+    //Pion p = (Pion) depart.getPiece();
+    
+    Piece t = new Pion(3,1,0);
+    e.setCase(e.getCase(3, 1), t);
+    
+    Piece test = new Pion(2,0,1);
+    e.setCase(e.getCase(2, 0), test);
+    
+    
+    
+    
+    Case depart = e.getCase(t.getPosX(), t.getPosY());
+    Case arrive = e.getCase(test.getPosX(), test.getPosY());
+    
     System.out.println(e.afficher());
-
+    
     System.out.println(depart);
     System.out.println(arrive);
+    //p.deplacementPossible(e,depart,arrive); 
+    System.out.print(t.verifDeplacement(e,arrive));
+    //p.positionInitiale(e, depart, arrive);
+    
+    
+  }
 
-    System.out.print(test.verifDeplacement(e,arrive));
 /*___________Saisie générale*/
 
       //  Scanner saisie = new Scanner(System.in);

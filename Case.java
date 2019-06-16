@@ -43,6 +43,43 @@ public class Case
     return false;
         
   }
+      /*Soumeya
+     * Case sur la meme ligne | utile pour methode CaseDevant(),verifReine
+     */
+    public boolean memeLigne(Case arrive)
+    {
+      if(this.getPosX()== arrive.getPosX())
+        return true;
+      return false;
+          
+    }
+    /*Soumeya
+     * J'utilise dans verifDeplacement de Pion
+     */
+    public boolean manger(Case arrive) {
+    if(this.getPiece().getCouleur() != arrive.getPiece().getCouleur())
+    {
+      if(this.getPiece().getCouleur()==0)//noir
+        if(arrive.getPosX()==this.getPosX()+1)
+        {
+          if(arrive.getPosY()==this.getPosY()-1)
+            return true;
+          else if (arrive.getPosY()==this.getPosY()+1)
+            return true;
+        }
+      else 
+      
+        if(arrive.getPosX()==this.getPosX()-1)
+        {
+          if(arrive.getPosY()==this.getPosY()-1)
+            return true;
+          else if (arrive.getPosY()==this.getPosY()+1)
+            return true;
+        }
+    }
+      
+    return false;
+  }
     
     /*Soumeya
      * Verifier si c'est bien la case de devant | utile pour les deplacements

@@ -50,9 +50,9 @@ public class Pion  extends Piece
 	 * 	ARRIVE devant DEPART
 	 */
 
-	public boolean verifDeplacement (Echiquier e,  Case arrive) 
+	public boolean verifDeplacement (Echiquier e, Case arrive) 
 	{
-		Case depart = e.getCase(this.getPosX(),this.getPosY());
+		Case depart=e.getCase(this.getPosX(), this.getPosY());
 		if(e.etatCase(arrive))
 		{
 			if(this.positionInitialePion())
@@ -67,18 +67,23 @@ public class Pion  extends Piece
 					return true;
 			}
 			else
-				if(depart.caseDevant(arrive))
+			{
+				
+				if(depart.caseDevant(arrive)) 
+					
 					//System.out.println("devant ok");	
 					return true;
+				if(arrive.getPosX()>depart.getPosX()+1)
+				
+					return false;
+			}
 		}
 		//Pour le cas de manger
-		if(depart.getPiece().getCouleur() != arrive.getPiece().getCouleur())
+		if(depart.manger(arrive))
 			return true;
-		
 		return false;
 			//System.out.println("arrive pas vide");
 	}
-
 	public boolean positionInitialePion() {
 
 		if(this.getCouleur() == 0)
