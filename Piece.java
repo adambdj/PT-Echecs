@@ -14,6 +14,9 @@ public abstract class Piece
     this.y = y;
     this.couleur = couleur;
   }
+
+  public void boucleDiagonale(Echiquier e, Case depart, Case arrive) {}
+  public boolean deplacementValide(Echiquier e,Case arrive){return true;}
   public boolean verifDeplacement(Echiquier e, int i, int j)
   {
     return true;

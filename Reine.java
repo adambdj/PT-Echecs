@@ -27,32 +27,88 @@ public class Reine extends Piece
 		return this.forme;
 	}
 
-	public void deplacerPiece(Echiquier e,int i, int j)
-	{
+	/*Soumeya
+	 * la reine peux aller partout 
+	 * la case d'arrive peut etre tout SAUF:
+	 * 	---> entre case depart et case d'arrive aucune piece
+	 * ----> et case arrive pas une piece
+	 */
+	
+	public boolean deplacementValide(Echiquier e,Case arrive) {
+		Case depart = e.getCase(this.getPosX(), this.getPosY());
+		
+		if(depart.memeColonne(arrive)) 
+			if(this.boucleColonne(e, depart, arrive))
+				return true;
+				
+		if(depart.memeLigne(arrive)) 
+			if(this.boucleLigne(e, depart, arrive))
+				return true;
+		
+		this.boucleDiagonale(e, depart, arrive);
+			
+		return false;	
 	}
-
-
-	//Si la piece est une Reine
-	//Pareil que le roi et si la case désigné = caseVide : True
-	public boolean verifDeplacement(Echiquier e)
-	{
-		if(this.mouvementPossible(e))
-			return true;
-		return false ;
+	
+	public void boucleDiagonale(Echiquier e, Case depart, Case arrive) {
+		if(depart.getPosX()>arrive.getPosX() && depart.getPosY()<arrive.getPosY())
+		{
+			System.out.println("en haut a droite");
+			for(int i=depart.getPosX()-1;i>arrive.getPosX();i--);
+			{
+				for(int j=depart.getPosY()+1;j<arrive.getPosY();j++) 
+				{
+					System.out.println("Case, i;j"+e.getCase(i, j));
+						if(!(e.getCase(i, j).estVide()))
+							System.out.println("il y a qlqn");
+						
+				}		
+			}
+		}
+			
 	}
-
-	public boolean mouvementPossible(Echiquier e) {
-		int x =this.getPosX();
-		int y = this.getPosY();
-
-		if(super.mouvementDiagonal(e, x, y) )
-			return true;
-		else if (super.mouvementHorizontal(e, x, y) )
-			return true;
-		else if(super.mouvementVertical(e, x, y))
-			return true;
-
-		return false;
+	
+	public boolean boucleColonne(Echiquier e, Case depart, Case arrive) {
+		if(arrive.getPosX()>depart.getPosX())
+		{
+			for(int i=depart.getPosX()+1; i<arrive.getPosX();i++) 
+			{
+				System.out.println("Case, i"+i+e.getCase(i, depart.getPosY()));
+				if(!(e.getCase(i, depart.getPosY()).estVide()))
+					return false;
+			}
+			
+		}else 
+			for(int i=arrive.getPosX()+1; i<depart.getPosX();i++) 
+			{
+				System.out.println("Case, i"+i+e.getCase(i, depart.getPosY()));
+				if(!(e.getCase(i, depart.getPosY()).estVide()))
+					return false;
+			}
+		if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
+			return false;
+		
+		return true;
+	}
+	
+	public boolean boucleLigne(Echiquier e, Case depart, Case arrive) {
+		if(arrive.getPosY()>depart.getPosY())
+		{
+			for(int j=depart.getPosY()+1; j<arrive.getPosY();j++) {
+				System.out.println("Case, j"+j+e.getCase(depart.getPosX(),j));
+				if(!(e.getCase(depart.getPosX(),j).estVide()))
+					return false;
+			}
+		}else
+			for(int j=arrive.getPosY()+1; j<depart.getPosY();j++) {
+				System.out.println("Case, j"+j+e.getCase(depart.getPosX(),j));
+				if(!(e.getCase(depart.getPosX(),j).estVide()))
+					return false;
+			}
+		if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
+			return false;
+		
+		return true;
 	}
 	public String toString()
 	{
