@@ -16,8 +16,14 @@ public class Jouer
         String j2nom = saisie.nextLine();
         Joueur j2 = new Joueur(j2nom,0);
         
+/*______________Terrain*/
+
+        System.out.println(pp.getTerrain().afficher());
+/*______________*/
+
         System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
         Partie pp = new Partie(j1,j2);  
+
   /*___________Debut Partie*/
         /*System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
@@ -31,9 +37,7 @@ public class Jouer
         }
         else
             System.out.println("C'est partie !");*/
-/*______________Terrain*/
 
-        System.out.println(pp.getTerrain().afficher());
 
 /*____________Saisie des déplacements*/
     /*Piece a déplacer*/
