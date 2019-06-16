@@ -11,13 +11,13 @@ public class Test
 
     Case depart = e.getCase(test.getPosX(), test.getPosY());
     Case arrive = e.getCase(4, 0);
-    
+
     System.out.println(e.afficher());
-    
+
     System.out.println(depart);
     System.out.println(arrive);
-  
-    System.out.print(test.verifDeplacement(e, depart, arrive));
+
+    System.out.print(test.verifDeplacement(e,arrive));
 /*___________Saisie générale*/
 
       //  Scanner saisie = new Scanner(System.in);
