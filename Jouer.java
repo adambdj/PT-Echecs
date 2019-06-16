@@ -21,7 +21,8 @@ public class Jouer
         System.out.println(pp.getTerrain().afficher());
 /*______________*/
 
-        System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
+        System.out.println(j1.getPrenom()+"------> Pieces blanche" + "\n" + j2.getPrenom() + "------> Pieces noire");
+        
         Partie pp = new Partie(j1,j2);  
 
   /*___________Debut Partie*/
