@@ -4,6 +4,7 @@ public class Jouer
 {
     public static void main(String[] args)
     {
+
    /*___________Saisie générale*/
         Scanner saisie = new Scanner(System.in);
             
@@ -23,9 +24,11 @@ public class Jouer
         String rep = saisie.nextLine();
         if(rep.equals("0") || rep.equals("o"))
         {
-            try {
+            try
+            {
                 pp.restaurerPartie("C:/Users/soume/eclipse-workspace/JeuDames/src/sauv.txt");
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
