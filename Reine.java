@@ -27,80 +27,102 @@ public class Reine extends Piece
 		return this.forme;
 	}
 
-	/*Soumeya
-	 * la reine peux aller partout
-	 * la case d'arrive peut etre tout SAUF:
-	 * 	---> entre case depart et case d'arrive aucune piece
-	 * ----> et case arrive pas une piece
-	 */
-
-	public boolean deplacementValide(Echiquier e,Case arrive) {
+	public boolean  verifDeplacement(Echiquier e,Case arrive) {
 		Case depart = e.getCase(this.getPosX(), this.getPosY());
-
-		if(depart.memeColonne(arrive))
+		
+		if(depart.memeColonne(arrive)) 
 			if(this.boucleColonne(e, depart, arrive))
 				return true;
-
-		if(depart.memeLigne(arrive))
+				
+		if(depart.memeLigne(arrive)) 
 			if(this.boucleLigne(e, depart, arrive))
 				return true;
-
-		this.boucleDiagonale(e, depart, arrive);
-
+		
+		if(this.boucleDiagonale(e, depart, arrive))
+			return true;
+		
 		return false;
+				
 	}
-/*
-	public void boucleDiagonale(Echiquier e, Case depart, Case arrive) {
-		if(depart.getPosX()>arrive.getPosX() && depart.getPosY()<arrive.getPosY())
-		{
-			System.out.println("en haut a droite");
-			for(int i=depart.getPosX()-1;i>arrive.getPosX();i--);
+	
+	
+	public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
+	{
+			int i = arrive.getPosX();
+			int j = arrive.getPosY();
+			if(depart.getPosX()>i && depart.getPosY()<j)  //en haut a droite
 			{
-				for(int j=depart.getPosY()+1;j<arrive.getPosY();j++)
+				int x = depart.getPosX() - 1;
+				int y = depart.getPosY() + 1;
+		
+				while(x > i && y < j)
 				{
-					System.out.println("Case, i;j" + e.getCase(i, j));
-						if(!(e.getCase(i, j).estVide()))
-							System.out.println("il y a qlqn");
-
+					
+					if (!(e.etatCase(e.getCase(x,y)) ))
+						return false;
+					x = x - 1;
+					y = y + 1;
 				}
 			}
-		}
-	}
-*/
-	public void boucleDiagonale(Echiquier e,Case depart, Case arrive)
-	{
-		int x = depart.getPosX() - 1;
-		int y = depart.getPosY() - 1;
-		int i = arrive.getPosX();
-		int j = arrive.getPosY();
-		while(x >= i || y <= j)
-		{
-			if (e.etatCase(e.getCase(x,y)))
-			{
-				System.out.println("Case i : " + x + " j : " + y);
+			else if(depart.getPosX()>i && depart.getPosY()>j) {//en haut a gauceh
+				int x = depart.getPosX() - 1;
+				int y = depart.getPosY() - 1;	
+				
+				while(x > i && y > j)
+				{
+					
+					if (!(e.etatCase(e.getCase(x,y)) ))
+						return false;
+					x = x - 1;
+					y = y - 1;
+				}
+				
 			}
-			else
-			if (e.etatCase(e.getCase(x,y)) == false)
-			{
-					System.out.println("case pas vide");
+			else if (depart.getPosX()<i && depart.getPosY()>j) {//en bas a gauche
+				int x = depart.getPosX() + 1;
+				int y = depart.getPosY() - 1;					
+				while(x < i && y > j)
+				{
+					if (!(e.etatCase(e.getCase(x,y)) ))
+						return false;
+					x = x + 1;
+					y = y - 1;
+				}
+				
 			}
-			x = x - 1;
-			y = y + 1;
+			else if (depart.getPosX()<i && depart.getPosY()<j) {//en bas a droite
+				int x = depart.getPosX() + 1;
+				int y = depart.getPosY() + 1;
+				
+				while(x < i && y < j)
+				{
+					if (!(e.etatCase(e.getCase(x,y)) ))
+						return false;
+					x = x + 1;
+					y = y + 1;
+				}
+				
+			}
+			
+			if(!(arrive.estVide()) )
+				if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
+					return false;
+		
+		return true;
 	}
-}
-
+	
 	public boolean boucleColonne(Echiquier e, Case depart, Case arrive) {
 		if(arrive.getPosX()>depart.getPosX())
 		{
-			for(int i=depart.getPosX()+1; i<arrive.getPosX();i++)
+			for(int i=depart.getPosX()+1; i<arrive.getPosX();i++) 
 			{
 				System.out.println("Case, i"+i+e.getCase(i, depart.getPosY()));
 				if(!(e.getCase(i, depart.getPosY()).estVide()))
 					return false;
 			}
-
-		}else
-			for(int i=arrive.getPosX()+1; i<depart.getPosX();i++)
+			
+		}else 
+			for(int i=arrive.getPosX()+1; i<depart.getPosX();i++) 
 			{
 				System.out.println("Case, i"+i+e.getCase(i, depart.getPosY()));
 				if(!(e.getCase(i, depart.getPosY()).estVide()))
@@ -108,10 +130,10 @@ public class Reine extends Piece
 			}
 		if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
 			return false;
-
+		
 		return true;
 	}
-
+	
 	public boolean boucleLigne(Echiquier e, Case depart, Case arrive) {
 		if(arrive.getPosY()>depart.getPosY())
 		{
@@ -128,7 +150,7 @@ public class Reine extends Piece
 			}
 		if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
 			return false;
-
+		
 		return true;
 	}
 	public String toString()

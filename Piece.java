@@ -15,82 +15,11 @@ public abstract class Piece
     this.couleur = couleur;
   }
 
-  public void boucleDiagonale(Echiquier e, Case depart, Case arrive) {}
-  public boolean deplacementValide(Echiquier e,Case arrive){return true;}
 
   public boolean verifDeplacement(Echiquier e, Case arrive)
   {
     return true;
   }
-  /*Methode utile pour le Roi, Reine, Tour
-   *
-   *
-   * SOUMEYA
-   */
-  public boolean mouvementDiagonal(Echiquier e, int i, int j) {
-
-    if(j+1>7) //Si je suis hors terrain - côté droit
-    {
-      if(e.etatCase(e.getCase(i+1, j-1)))
-        return true;
-      else if(e.etatCase(e.getCase(i-1,j-1)))
-        return true;
-    }
-    else if (j-1<0) //Si je suis hors terrain - côté gauche
-    {
-      if(e.etatCase(e.getCase(i-1, j+1)))
-        return true;
-      else if (e.etatCase(e.getCase(i+1, j+1)) )
-        return true;
-    }
-    else
-    {
-      if(e.etatCase(e.getCase(i+1, j-1)))
-      return true;
-      else if (e.etatCase(e.getCase(i-1,j-1) ) )
-          return true;
-      else if (  e.etatCase(e.getCase(i-1, j+1)))
-        return true;
-      else if ( e.etatCase(e.getCase(i+1, j+1)))
-        return true;
-    }
-    return false;
-  }
-
-  public boolean mouvementVertical(Echiquier e, int i, int j) {
-    if(i+1>7) //Si je suis hors terrain - côté bas
-      if(e.etatCase(e.getCase(i-1, j)))
-        return true;
-    else if(i-1<0) //Si je suis hors terrain - côté haut
-      if(e.etatCase(e.getCase(i+1, j)))
-        return true;
-    else
-    {
-      if(e.etatCase(e.getCase(i-1, j)))
-        return true;
-      else if (e.etatCase(e.getCase(i+1, j)))
-        return true;
-    }
-    return false;
-  }
-
-  public boolean mouvementHorizontal(Echiquier e, int i, int j) {
-    if(j+1>7) //Si je suis hors terrain - côté droit
-      if(e.etatCase(e.getCase(i, j-1)))
-        return true;
-    else if (j-1<0) //Si je suis hors terrain - côté gauche
-      if(e.etatCase(e.getCase(i, j+1)))
-        return true;
-    else
-    {
-      if(e.etatCase(e.getCase(i, j-1)))
-        return true;
-      else if (e.etatCase(e.getCase(i, j+1)) )
-        return true;
-    }
-    return false;
-  }
-
 
 
     /* GETTERS */

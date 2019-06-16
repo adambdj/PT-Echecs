@@ -5,26 +5,30 @@ public class Test
   public static void main(String [] arg)
   {
     Echiquier e = new Echiquier();
+    
+    
+    
     //Pion p = (Pion) depart.getPiece();
-    Piece t = new Pion(3,4,0);
-    e.setCase(e.getCase(3, 4), t);
-
-    Piece test = new Fou(5,2,1);
-    e.setCase(e.getCase(5, 2), test);
-
-    Case depart = e.getCase(test.getPosX(), test.getPosY());
-    Case arrive = e.getCase(3,4);
-
+    
+    Piece t = new Pion(5,6,1);
+    e.setCase(e.getCase(5, 6), t);
+    
+    Piece d = new Reine(3,4,1);
+    e.setCase(e.getCase(3, 4), d);
+    
+    
+    
+    
+    
+    Case depart = e.getCase(d.getPosX(), d.getPosY());
+    Case arrive = e.getCase(4,5);
+    
+    System.out.println(e.afficher());
+    
     System.out.println(depart);
     System.out.println(arrive);
-    test.deplacerPiece(e,arrive);
-    System.out.println(e.afficher());
-    //p.deplacementPossible(e,depart,arrive);
-    //p.positionInitiale(e, depart, arrive);
-
-
-
-
+    //p.deplacementPossible(e,depart,arrive); 
+    System.out.println(d.verifDeplacement(e, arrive));
 
   }
 
