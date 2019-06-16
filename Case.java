@@ -32,6 +32,32 @@ public class Case
       return false;
     return true;
   }
+   
+  /*Soumeya
+   * Case sur la meme colonne | utile pour methode CaseDevant()
+   */
+    public boolean memeColonne(Case arrive)
+  {
+    if(this.getPosY() == arrive.getPosY())
+      return true;
+    return false;
+        
+  }
+    
+    /*Soumeya
+     * Verifier si c'est bien la case de devant | utile pour les deplacements
+     * True = ARRIVE est devant THIS
+     */
+    public boolean caseDevant(Case arrive) {
+      if(this.getPiece().getCouleur() == 0)//noir
+        if(this.memeColonne(arrive) && this.getPosX()+1 == arrive.getPosX())
+          return true;
+      else if (this.getPiece().getCouleur() == 1)
+        if(this.memeColonne(arrive) && this.getPosX()-1 == arrive.getPosX())
+          return true;
+      
+      return false;
+    }
 
 
     /* _________________________ACCESSEUR*/

@@ -41,58 +41,42 @@ public class Pion  extends Piece
 
 	}
 
-	public boolean caseVidedevant(Echiquier e, int x, int couleur) {
-		/*if(e.getCase(x+1, this.getPosY()).getPiece()==null )
-			return true;*/
-		if(couleur == 0) {
-			if(e.etatCase(e.getCase(x+1, this.getPosY())))
-				return true;
-		}else
-			if(e.etatCase(e.getCase(x-1, this.getPosY())))
-				return true;
+		/*
+	 * la case d'arrive peut être seulement : 
+	 * ----> la case de devant 
+	 * ----> la case +2 par rapport a la depart 
+	 * 		ssi depart = posInitiale
+	 * 		et ssi depart+1 = vide
+	 * 	ARRIVE devant DEPART
+	 */
 
-
-		return false;
-	}
-
-	public boolean mouvementValideNoir(Echiquier e) {
-		if(this.positionInitialePion()
-				&& this.caseVidedevant(e,this.getPosX(),0)
-				&& this.caseVidedevant(e,this.getPosX()+1,0))
-			return true;//position initiale ; case+1 vide ; case+2 vide
-
-		else if(this.positionInitialePion() && this.caseVidedevant(e,this.getPosX(),0 ) )
-			return true; //position initiale ; case+1 vide
-
-		else if(this.caseVidedevant(e,this.getPosX(),0))
-			return true;//!position initiale ; case+1 vide
-
-		return false ;//!position initiale ; case+1 non null | position initiale; case+1 non null
-	}
-
-	public boolean mouvementValideBlanc (Echiquier e) {
-		if (this.positionInitialePion()
-				&& this.caseVidedevant(e,this.getPosX(),1)
-				&& this.caseVidedevant(e,this.getPosX()-1,1))
-			return true; //position initiale ; case+1 vide ; case+2 vide
-		else if(this.positionInitialePion() && this.caseVidedevant(e,this.getPosX(),1 ) )
-			return true; //position initiale ; case+1 vide
-		else if(this.caseVidedevant(e,this.getPosX(),1))
-			return true; //!position initiale ; case+1 vide
-
-		return false; //!position initiale ; case+1 non null | position initiale; case+1 non null
-	}
-
-
-	public boolean verifDeplacement(Echiquier e)
+	public boolean verifDeplacement (Echiquier e,  Case arrive) 
 	{
-		if(this.getCouleur()==0) { //Pion noir
-			if(this.mouvementValideNoir(e))
-				return true;
-		}else
-			if(this.mouvementValideBlanc(e))
-				return true;
+		Case depart = e.getCase(this.getPosX(),this.getPosY());
+		if(e.etatCase(arrive))
+		{
+			if(this.positionInitialePion())
+			{
+				if(depart.caseDevant(arrive))
+					//System.out.println("Pos initiale + devant ok");
+					return true;
+				
+				if(arrive.equals(e.getCase(depart.getPosX()+2, depart.getPosY()))
+						&& e.getCase(depart.getPosX()+1, depart.getPosY()).estVide())
+					//System.out.println("case vide devant + ok");
+					return true;
+			}
+			else
+				if(depart.caseDevant(arrive))
+					//System.out.println("devant ok");	
+					return true;
+		}
+		//Pour le cas de manger
+		if(depart.getPiece().getCouleur() != arrive.getPiece().getCouleur())
+			return true;
+		
 		return false;
+			//System.out.println("arrive pas vide");
 	}
 
 	public boolean positionInitialePion() {

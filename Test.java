@@ -5,10 +5,19 @@ public class Test
   public static void main(String [] arg)
   {
     Echiquier e = new Echiquier();
-    e.setCase(e.getCase(4,0),new Fou(4,0,0));
-    e.getCase(4,0).getPiece().deplacerPiece(e,1,3);
 
+    Piece test = new Pion(3,0,0);
+    e.setCase(e.getCase(3, 0), test);
+
+    Case depart = e.getCase(test.getPosX(), test.getPosY());
+    Case arrive = e.getCase(4, 0);
+    
     System.out.println(e.afficher());
+    
+    System.out.println(depart);
+    System.out.println(arrive);
+  
+    System.out.print(test.verifDeplacement(e, depart, arrive));
 /*___________Saisie générale*/
 
       //  Scanner saisie = new Scanner(System.in);

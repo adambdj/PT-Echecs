@@ -1,5 +1,3 @@
-import java.io.*;
-
 public abstract class Piece
 {
   private int couleur;	// 0 pour noir, 1 pour blanc
@@ -25,13 +23,17 @@ public abstract class Piece
     return true;
   }
 
+    public boolean verifDeplacement(Echequier e, Case arrive)
+  {
+    return true;
+  }
   /*Methode utile pour le Roi, Reine, Tour
-   *
-   *
+   * 
+   * 
    * SOUMEYA
    */
   public boolean mouvementDiagonal(Echiquier e, int i, int j) {
-
+   
     if(j+1>7) //Si je suis hors terrain - côté droit
     {
       if(e.etatCase(e.getCase(i+1, j-1)))
@@ -46,7 +48,7 @@ public abstract class Piece
       else if (e.etatCase(e.getCase(i+1, j+1)) )
         return true;
     }
-    else
+    else 
     {
       if(e.etatCase(e.getCase(i+1, j-1)))
       return true;
@@ -57,9 +59,9 @@ public abstract class Piece
       else if ( e.etatCase(e.getCase(i+1, j+1)))
         return true;
     }
-    return false;
+    return false;   
   }
-
+  
   public boolean mouvementVertical(Echiquier e, int i, int j) {
     if(i+1>7) //Si je suis hors terrain - côté bas
       if(e.etatCase(e.getCase(i-1, j)))
@@ -76,7 +78,7 @@ public abstract class Piece
     }
     return false;
   }
-
+  
   public boolean mouvementHorizontal(Echiquier e, int i, int j) {
     if(j+1>7) //Si je suis hors terrain - côté droit
       if(e.etatCase(e.getCase(i, j-1)))
@@ -84,7 +86,7 @@ public abstract class Piece
     else if (j-1<0) //Si je suis hors terrain - côté gauche
       if(e.etatCase(e.getCase(i, j+1)))
         return true;
-    else
+    else 
     {
       if(e.etatCase(e.getCase(i, j-1)))
         return true;
@@ -93,19 +95,6 @@ public abstract class Piece
     }
     return false;
   }
-
-   //Pour déplacer une piece - Fonctionne pour toute les pieces
-    public void deplacerPieces(Echiquier e,Case arrive) {
-    //Mettre des EXCEPTIONS !
-      if(this.verifDeplacement(e))
-      {
-        if(!(arrive.estVide()) && arrive.getPiece().getCouleur() != this.getCouleur()) {
-          e.setCase(arrive, e.getCase(this.getPosX(),this.getPosY()).getPiece());
-          e.getCase(this.getPosX(),this.getPosY()).setPiece(null);
-        }
-
-      }
-    }
 
 
 
@@ -159,8 +148,7 @@ public abstract class Piece
        {
           int x = this.getPosX();
           int y = this.getPosY();
-          e.setCase(e.getCase(i,j),e.getCase(x,y).getPiece());
-          e.setCase(e.getCase(x,y),null);
+          e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).getPiece());
        }
      }
 
