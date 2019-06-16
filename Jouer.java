@@ -17,13 +17,12 @@ public class Jouer
         Joueur j2 = new Joueur(j2nom,0);
         
 /*______________Terrain*/
-
+        Partie pp = new Partie(j1,j2);  
         System.out.println(pp.getTerrain().afficher());
 /*______________*/
 
         System.out.println(j1.getPrenom()+"------> Pieces blanche" + "\n" + j2.getPrenom() + "------> Pieces noire");
-        
-        Partie pp = new Partie(j1,j2);  
+
 
   /*___________Debut Partie*/
         /*System.out.println("Voulez vous reprendre votre partie ?(O/N)");
