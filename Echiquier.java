@@ -115,6 +115,7 @@ public class Echiquier
 			}
 		}
 	}
+
 	public String toString()
 	{
 		String s = "|";
@@ -127,6 +128,12 @@ public class Echiquier
 		}
 		return s;
 	}
+
+	public void effacerEchiquier()
+    {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    }
 
 // V.1
 	//public String afficher(){
@@ -158,6 +165,8 @@ public class Echiquier
 		String bordure = "\t";        // bordure de l'affichage, composé de *
 		String espacement = "\t";     // l'espace entre l'élement à afficher et la bordure du plateau
 		String res = "";
+
+		effacerEchiquier();
 
     	// la première boucle permet d'afficher les bords
 		for(int u = 0; u < 8; u++)
