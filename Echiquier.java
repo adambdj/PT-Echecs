@@ -139,7 +139,8 @@ public class Echiquier
 			}
 			else
 			{
-            Runtime.getRuntime().exec("clear");
+            	System.out.print("\033[H\033[2J");  
+        		System.out.flush(); 
 			}
     	}
 		catch (IOException | InterruptedException ex) {}
