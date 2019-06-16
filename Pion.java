@@ -37,15 +37,15 @@ public class Pion  extends Piece
 	}
 
 	/*
-	 * la case d'arrive peut être seulement : 
-	 * ----> la case de devant 
-	 * ----> la case +2 par rapport a la depart 
+	 * la case d'arrive peut être seulement :
+	 * ----> la case de devant
+	 * ----> la case +2 par rapport a la depart
 	 * 		ssi depart = posInitiale
 	 * 		et ssi depart+1 = vide
 	 * 	ARRIVE devant DEPART
 	 */
 
-	public boolean verifDeplacement (Echiquier e, Case arrive) 
+	public boolean verifDeplacement (Echiquier e, Case arrive)
 	{
 		Case depart=e.getCase(this.getPosX(), this.getPosY());
 		if(e.etatCase(arrive))
@@ -87,11 +87,6 @@ public class Pion  extends Piece
 		if(depart.manger(arrive))
 			return true;
 		
-		return false;
-		}
-		//Pour le cas de manger
-		/*if(depart.manger(arrive))
-			return true;*/
 		return false;
 			//System.out.println("arrive pas vide");
 	}
