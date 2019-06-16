@@ -45,7 +45,7 @@ public class Jouer
         {
             Joueur j = pp.alternationJoueur(tours, j1, j2);
             
-            System.out.println(j.getPrénom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
+            System.out.println(j.getPrenom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
             int ligi,lig;
             String posPiece,pos;
             //Boucle se répète tant qu'on a pas saisie une case contenant une Piece
@@ -65,7 +65,7 @@ public class Jouer
         /*Case où se déplacer   */
             //Boucle se répète tant qu'on a pas saisie une case vide
             
-            System.out.println(j.getPrénom() + " où voulez vous vous déplacer?");
+            System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
             do {
                 
                 pos = saisie.nextLine();
