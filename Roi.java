@@ -1,4 +1,5 @@
 //Le Roi se déplace d'une seule case dans toutes les directions et de deux cases lors du roque.
+import java.math.*;
 
 public class Roi  extends Piece
 {
@@ -80,10 +81,11 @@ public class Roi  extends Piece
 	public boolean verifdeplacement(Echiquier e, Case arrive)
 	{
 		Case depart = e.getCase(this.getPosX(), this.getPosY());
-		if(!(this.memeColonne(depart, arrive)) || depart.getPiece().getCouleur() == arrive.getPiece().getCouleur())
+		System.out.println("couleur d " + depart.getPiece().getCouleur() + " couleur arriver " + arrive.getPiece().getCouleur());
+		if(!(this.memeColonne(depart, arrive)) && arrive.getPiece().getCouleur() == depart.getPiece().getCouleur())
 			return false;
 
-		if(!(this.memeLigne(depart, arrive)) || depart.getPiece().getCouleur() == arrive.getPiece().getCouleur())
+		if(!(this.memeLigne(depart, arrive)) && arrive.getPiece().getCouleur() == depart.getPiece().getCouleur())
 			return false;
 
 		if(!(this.hautDroite(depart, arrive)))
