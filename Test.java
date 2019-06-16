@@ -9,17 +9,17 @@ public class Test
     Piece t = new Pion(3,4,0);
     e.setCase(e.getCase(3, 4), t);
 
-    Piece test = new Reine(5,2,1);
+    Piece test = new Fou(5,2,1);
     e.setCase(e.getCase(5, 2), test);
 
     Case depart = e.getCase(test.getPosX(), test.getPosY());
     Case arrive = e.getCase(3,4);
-    System.out.println(e.afficher());
+
     System.out.println(depart);
     System.out.println(arrive);
-
+    test.deplacerPiece(e,arrive);
+    System.out.println(e.afficher());
     //p.deplacementPossible(e,depart,arrive);
-    test.boucleDiagonale(e,depart,arrive);
     //p.positionInitiale(e, depart, arrive);
 
 

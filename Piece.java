@@ -139,13 +139,19 @@ public abstract class Piece
     // Deplacer piece a redefinir dans les objects tour, cavalier etc...
      public void deplacerPiece(Echiquier e, Case arrive)
      {
+       System.out.println("test 1");
        if (this.verifDeplacement(e,arrive))
        {
           int x = this.getPosX();
           int y = this.getPosY();
           int i = arrive.getPosX();
           int j = arrive.getPosY();
-          e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).getPiece());
+          System.out.println("x " + x + " y " + y);
+          System.out.println("i " + i + " j " + j);
+          e.setCase(e.getCase(i,j),e.getCase(x,y).getPiece());
+          System.out.println(e.getCase(i,j));
+          e.setCase(e.getCase(x,y),null);
+          System.out.println(e.getCase(x,y));
        }
      }
 

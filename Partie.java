@@ -72,7 +72,6 @@ public class Partie
           depart.setPiece(null);
           return true;
         }
-
       }
       return false;
     }
