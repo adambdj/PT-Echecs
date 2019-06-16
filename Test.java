@@ -4,31 +4,31 @@ public class Test
 {
   public static void main(String [] arg)
   {
-        Echequier e = new Echequier();
+   Echiquier e = new Echequier();
     
     
     
     //Pion p = (Pion) depart.getPiece();
     
-    Piece t = new Pion(3,1,0);
-    e.setCase(e.getCase(3, 1), t);
+    Piece t = new Pion(3,4,0);
+    e.setCase(e.getCase(3, 4), t);
     
-    Piece test = new Pion(2,0,1);
-    e.setCase(e.getCase(2, 0), test);
-    
-    
+    Piece d = new Reine(5,2,1);
+    e.setCase(e.getCase(5, 2), d);
     
     
-    Case depart = e.getCase(t.getPosX(), t.getPosY());
-    Case arrive = e.getCase(test.getPosX(), test.getPosY());
+    
+    
+    
+    Case depart = e.getCase(d.getPosX(), d.getPosY());
+    Case arrive = e.getCase(3,4);
     
     System.out.println(e.afficher());
     
     System.out.println(depart);
     System.out.println(arrive);
     //p.deplacementPossible(e,depart,arrive); 
-    System.out.print(t.verifDeplacement(e,arrive));
-    //p.positionInitiale(e, depart, arrive);
+    d.boucleDiagonale(e, depart, arrive);
     
     
   }
