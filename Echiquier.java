@@ -131,10 +131,20 @@ public class Echiquier
 
 	public void effacerEchiquier()
     {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
+		try
+		{
+        	if(System.getProperty("os.name").contains("Windows"))
+			{
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			}
+			else
+			{
+            Runtime.getRuntime().exec("clear");
+			}
+    	}
+		catch (IOException | InterruptedException ex) {}
+	}
+    
 // V.1
 	//public String afficher(){
 	// 	int nb =1;
