@@ -28,35 +28,82 @@ public class Roi  extends Piece
 		return this.forme;
 	}
 
-	public void deplacerPiece()
+		public boolean hautDroite(Case depart, Case arrive)
 	{
-	}
-
-	/* Msg de Soumeya pour Salim
-	*En faisant le déplacement de la Reine 
-	* je suis passé par le déplacement du Roi du coup 
-	*je te met la methode ici il faut juste faire déplacement mtn
-	*/
-	public boolean verifDeplacement(Echiquier e)
-	{
-		if(this.mouvementPossible(e))
+		if(arrive.getPosX()==depart.getPosX()-1 && arrive.getPosY()==depart.getPosY()+1)  //en haut a droite
 			return true;
-		return false ;	
-	}
-	
-	public boolean mouvementPossible(Echiquier e) {
-		int x =this.getPosX();
-		int y = this.getPosY();
-		
-		if(super.mouvementDiagonal(e, x, y) )
-			return true;
-		else if (super.mouvementHorizontal(e, x, y) )
-			return true;
-		else if(super.mouvementVertical(e, x, y))
-			return true;
-			
 		return false;
 	}
+	
+	public boolean hautGauche(Case depart, Case arrive) {
+		if(arrive.getPosX()==depart.getPosX()-1 && arrive.getPosY()==depart.getPosY()-1) //en haut a gauceh
+			return true;
+		return false;
+		
+	}
+	public boolean basGauche(Case depart, Case arrive) {
+		if (arrive.getPosX()==depart.getPosX()+1 && arrive.getPosY()==depart.getPosY()-1) //en bas a gauche
+			return true;
+		return false;
+	}
+		
+	public boolean basDroite(Case depart, Case arrive) {
+		if (arrive.getPosX()==depart.getPosX()+1 && arrive.getPosY()==depart.getPosY()+1) //en bas a gauche
+			return true;
+		return false;
+	}
+	
+	public boolean memeLigne(Case depart, Case arrive) {
+		if(depart.memeLigne(arrive)) {
+			if(arrive.getPosY() == depart.getPosY()-1)
+				return true;
+			else if(arrive.getPosY() == depart.getPosY()+1)
+				return true;
+		}
+		return false;
+	}
+	
+	public boolean memeColonne(Case depart, Case arrive) {
+		if(depart.memeColonne(arrive)) {
+			if(arrive.getPosX() == depart.getPosX()-1)
+				return true;
+			else if(arrive.getPosX() == depart.getPosX()+1)
+				return true;
+		}
+		return false;
+	}
+	
+		
+	/*
+	 * les case autours
+	 */
+	public boolean verifdeplacement(Echiquier e, Case arrive)
+	{
+		Case depart = e.getCase(this.getPosX(), this.getPosY());
+		if(!(this.memeColonne(depart, arrive)))
+			return false;
+			
+		if(!(this.memeLigne(depart, arrive)))
+			return false;
+
+		if(!(this.hautDroite(depart, arrive)))
+			return false;
+			
+		if(!(this.hautGauche(depart, arrive)))
+			return false;
+			
+		if(!(this.basDroite(depart, arrive)))
+			return false;
+		
+		if(!(this.basGauche(depart, arrive)))
+			return false;
+		
+		if(super.memeCouleur(depart, arrive))
+			return false;
+
+		return true;
+	}
+
 
 	public String toString()
 	{

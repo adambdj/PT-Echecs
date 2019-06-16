@@ -8,13 +8,35 @@ public class Test
     
     
     
-    //Pion p = (Pion) depart.getPiece();
+   Piece t = new Pion(4,3,1);
+    e.setCase(e.getCase(4, 3), t);
     
-    Piece t = new Pion(5,6,1);
-    e.setCase(e.getCase(5, 6), t);
+    Piece t1 = new Pion(4,4,1);
+    e.setCase(e.getCase(4, 4), t1);
     
-    Piece d = new Reine(3,4,1);
+    Piece t2= new Pion(4,5,1);
+    e.setCase(e.getCase(4, 5), t2);
+    
+    Piece t3= new Pion(3,5,1);
+    e.setCase(e.getCase(3, 5), t3);
+    
+    Piece t4 = new Pion(2,4,1);
+    e.setCase(e.getCase(2, 4), t4);
+    
+    Piece t5 = new Pion(2,3,1);
+    e.setCase(e.getCase(2, 3), t5);
+    
+    Piece t6= new Pion(3,3,1);
+    e.setCase(e.getCase(3, 3), t6);
+    
+    Piece t7= new Pion(2,5,1);
+    e.setCase(e.getCase(2, 5), t7);
+    
+
+    
+    Piece d = new Roi(3,4,1);
     e.setCase(e.getCase(3, 4), d);
+    
     
     
     

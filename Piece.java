@@ -15,7 +15,14 @@ public abstract class Piece
     this.couleur = couleur;
   }
 
-
+   public boolean memeCouleur(Case depart, Case arrive) {
+    if(!(arrive.estVide()) )
+      if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
+        return true;
+    return false;
+  }
+ 
+ 
   public boolean verifDeplacement(Echiquier e, Case arrive)
   {
     return true;

@@ -46,7 +46,7 @@ public class Reine extends Piece
 	}
 	
 	
-	public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
+public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
 	{
 			int i = arrive.getPosX();
 			int j = arrive.getPosY();
@@ -104,9 +104,8 @@ public class Reine extends Piece
 				
 			}
 			
-			if(!(arrive.estVide()) )
-				if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
-					return false;
+			if(super.memeCouleur(depart, arrive))
+				return false;
 		
 		return true;
 	}
@@ -128,7 +127,8 @@ public class Reine extends Piece
 				if(!(e.getCase(i, depart.getPosY()).estVide()))
 					return false;
 			}
-		if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
+		
+		if(super.memeCouleur(depart, arrive))
 			return false;
 		
 		return true;
@@ -148,8 +148,8 @@ public class Reine extends Piece
 				if(!(e.getCase(depart.getPosX(),j).estVide()))
 					return false;
 			}
-		if(arrive.getPiece().getCouleur()==depart.getPiece().getCouleur())
-			return false;
+		if(super.memeCouleur(depart, arrive))
+				return false;
 		
 		return true;
 	}
