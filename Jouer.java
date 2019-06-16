@@ -64,7 +64,7 @@ public class Jouer
         /*Case où se déplacer   */
             //Boucle se répète tant qu'on a pas saisie une case vide
             
-            System.out.println(j.getPrénom() + " où voulez vous vous déplacer?");
+            System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
             do {
                 
                 pos = saisie.nextLine();
