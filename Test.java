@@ -5,6 +5,9 @@ public class Test
   public static void main(String [] arg)
   {
     Echiquier e = new Echiquier();
+    e.setCase(e.getCase(4,0),new Fou(4,0,0));
+    e.getCase(4,0).getPiece().deplacerPiece(e,1,3);
+
     System.out.println(e.afficher());
 /*___________Saisie générale*/
 

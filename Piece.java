@@ -95,13 +95,13 @@ public abstract class Piece
   }
 
    //Pour déplacer une piece - Fonctionne pour toute les pieces
-    public void deplacerPieces(Echiquier e, Case depart, Case arrive) {
+    public void deplacerPieces(Echiquier e,Case arrive) {
     //Mettre des EXCEPTIONS !
-      if(depart.getPiece().verifDeplacement(e))
+      if(this.verifDeplacement(e))
       {
-        if( (!(depart.estVide())) && arrive.estVide()) {
-          e.setCase(arrive, depart.getPiece());
-          depart.setPiece(null);
+        if(!(arrive.estVide()) && arrive.getPiece().getCouleur() != this.getCouleur()) {
+          e.setCase(arrive, e.getCase(this.getPosX(),this.getPosY()).getPiece());
+          e.getCase(this.getPosX(),this.getPosY()).setPiece(null);
         }
 
       }
@@ -159,7 +159,8 @@ public abstract class Piece
        {
           int x = this.getPosX();
           int y = this.getPosY();
-          e.setCase(e.getCase(i,j),e.getCase(this.x,this.y).getPiece());
+          e.setCase(e.getCase(i,j),e.getCase(x,y).getPiece());
+          e.setCase(e.getCase(x,y),null);
        }
      }
 

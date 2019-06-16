@@ -74,7 +74,7 @@ public class Case
 
   public String toString()
   {
-    return "Case["+this.x + ","+this.y+ "]"+ this.P;
+    return "Case["+this.x + ","+this.y+ "]"+ this.p;
   }
 
 
