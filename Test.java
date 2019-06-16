@@ -5,7 +5,7 @@ public class Test
   public static void main(String [] arg)
   {
     Echiquier e = new Echiquier();
-    Case depart = e.getCase(6, 0);
+    Case depart = e.getCase(6,0);
     Case arrive = e.getCase(5,0);
 
     System.out.println(e.afficher());
@@ -14,19 +14,14 @@ public class Test
     System.out.println(arrive);
 
     System.out.println(depart.getPiece().verifDeplacement(e, arrive));
-    if(depart.getPiece().deplacerPieces(e,arrive)) {
-      System.out.println(e.afficher());
-    }
-    e.setCase(arrive, depart.getPiece());
-    depart.setPiece(null);
+    depart.getPiece().deplacerPieces(e,arrive);
+
     System.out.println(e.afficher());
     System.out.println(depart);
     System.out.println(arrive);
 
+
+
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 38dfdb8370c5a37fbda16bc88fda4c2ecc06d760
