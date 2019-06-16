@@ -25,4 +25,8 @@ public class Test
 
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 38dfdb8370c5a37fbda16bc88fda4c2ecc06d760
