@@ -21,7 +21,7 @@ public class Jouer
         System.out.println(pp.getTerrain().afficher());
 /*______________*/
 
-        System.out.println(j1.getPrenom()+"------> Pieces blanche" + "\n" + j2.getPrenom() + "------> Pieces noire");
+        System.out.println(j1.getPrenom()+"------> Pièces blanches" + "\n" + j2.getPrenom() + "------> Pièces noires");
 
 
   /*___________Debut Partie*/
@@ -47,7 +47,7 @@ public class Jouer
         {
             Joueur j = pp.alternationJoueur(tours, j1, j2);
             
-            System.out.println(j.getPrenom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
+            System.out.println(j.getPrenom() + " Quelle pièce voulez-vous déplacer? (saisir coordonnées)");
             int lig;
             String posPiece,pos;
             //Boucle se répète tant qu'on a pas saisie une case contenant une Piece
@@ -57,15 +57,15 @@ public class Jouer
                 
             //Si la case selectionné ne contient pas de piece
                 if(pp.getTerrain().etatCase(j.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0))))
-                    System.out.println("Cette case ne contient pas de Piece, veuillez réessayer :");    
+                    System.out.println("Cette case ne contient pas de Pièce, veuillez réessayer :");    
                 
             }while(pp.getTerrain().etatCase(j.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0))));
             
-            System.out.println("Position saisie -> "+posPiece+" : "+j.getChoixPiece(pp.getTerrain(),lig,posPiece.charAt(0)));
+            System.out.println("Position saisie -> " + posPiece + " : " + j.getChoixPiece(pp.getTerrain(),lig,posPiece.charAt(0)));
             
         
         /*Case où se déplacer   */
-            //Boucle se répète tant qu'on a pas saisie une case vide
+            //Boucle se répète tant qu'on n'a pas saisie une case vide
             
             System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
             do {
@@ -78,7 +78,7 @@ public class Jouer
             }while(j.getChoixPiece(pp.getTerrain(),lig,pos.charAt(0)) != null);
             
             
-            System.out.println("Position saisie -> "+pos+" : "+j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0)));
+            System.out.println("Position saisie -> " + pos + " : " + j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0)));
             Case depart=j.getChoixCase(pp.getTerrain(),lig,posPiece.charAt(0));
             Case arrive=j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0));
 
@@ -88,7 +88,7 @@ public class Jouer
                 System.out.println(pp.getTerrain().afficher());
             }
             else
-                System.out.println("Impossible,la piece ne peux pas se deplacer");
+                System.out.println("Impossible, la piece ne peut pas être déplacée");
             
             System.out.println("Voulez vous quitter la partie ? (O/N)");
                 quit = saisie.nextLine();
