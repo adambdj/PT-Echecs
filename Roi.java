@@ -4,7 +4,7 @@ public class Roi  extends Piece
 {
 
 	private String forme;
-	
+
 	public Roi()
 	{
 		super();
@@ -34,25 +34,25 @@ public class Roi  extends Piece
 			return true;
 		return false;
 	}
-	
+
 	public boolean hautGauche(Case depart, Case arrive) {
 		if(arrive.getPosX()==depart.getPosX()-1 && arrive.getPosY()==depart.getPosY()-1) //en haut a gauceh
 			return true;
 		return false;
-		
+
 	}
 	public boolean basGauche(Case depart, Case arrive) {
 		if (arrive.getPosX()==depart.getPosX()+1 && arrive.getPosY()==depart.getPosY()-1) //en bas a gauche
 			return true;
 		return false;
 	}
-		
+
 	public boolean basDroite(Case depart, Case arrive) {
 		if (arrive.getPosX()==depart.getPosX()+1 && arrive.getPosY()==depart.getPosY()+1) //en bas a gauche
 			return true;
 		return false;
 	}
-	
+
 	public boolean memeLigne(Case depart, Case arrive) {
 		if(depart.memeLigne(arrive)) {
 			if(arrive.getPosY() == depart.getPosY()-1)
@@ -62,7 +62,7 @@ public class Roi  extends Piece
 		}
 		return false;
 	}
-	
+
 	public boolean memeColonne(Case depart, Case arrive) {
 		if(depart.memeColonne(arrive)) {
 			if(arrive.getPosX() == depart.getPosX()-1)
@@ -72,32 +72,32 @@ public class Roi  extends Piece
 		}
 		return false;
 	}
-	
-		
+
+
 	/*
 	 * les case autours
 	 */
 	public boolean verifdeplacement(Echiquier e, Case arrive)
 	{
 		Case depart = e.getCase(this.getPosX(), this.getPosY());
-		if(!(this.memeColonne(depart, arrive)))
+		if(!(this.memeColonne(depart, arrive)) || depart.getPiece().getCouleur() == arrive.getPiece().getCouleur())
 			return false;
-			
-		if(!(this.memeLigne(depart, arrive)))
+
+		if(!(this.memeLigne(depart, arrive)) || depart.getPiece().getCouleur() == arrive.getPiece().getCouleur())
 			return false;
 
 		if(!(this.hautDroite(depart, arrive)))
 			return false;
-			
+
 		if(!(this.hautGauche(depart, arrive)))
 			return false;
-			
+
 		if(!(this.basDroite(depart, arrive)))
 			return false;
-		
+
 		if(!(this.basGauche(depart, arrive)))
 			return false;
-		
+
 		if(super.memeCouleur(depart, arrive))
 			return false;
 

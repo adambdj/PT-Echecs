@@ -177,7 +177,7 @@ public class Echiquier
 		String espacement = "\t";     // l'espace entre l'élement à afficher et la bordure du plateau
 		String res = "";
 
-		effacerEchiquier();
+//		effacerEchiquier();
 
     	// la première boucle permet d'afficher les bords
 		for(int u = 0; u < 8; u++)
