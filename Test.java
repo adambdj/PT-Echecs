@@ -14,6 +14,7 @@ public class Test
     System.out.println(arrive);
 
     System.out.println(depart.getPiece().verifDeplacement(e, arrive));
+<<<<<<< HEAD
     depart.getPiece().deplacerPieces(e,arrive);
 
 =======
