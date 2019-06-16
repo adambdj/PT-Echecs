@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Echiquier 
+public class Echiquier
 {
 	private Case[][] grille;
 
@@ -130,9 +130,9 @@ public class Echiquier
 	}
 
 	public void effacerEchiquier()
-    {  
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();  
+    {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
 // V.1
