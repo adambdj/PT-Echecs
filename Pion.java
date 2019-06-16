@@ -36,12 +36,7 @@ public class Pion  extends Piece
 		return this.forme;
 	}
 
-	public void deplacerPiece()
-	{
-
-	}
-
-		/*
+	/*
 	 * la case d'arrive peut être seulement : 
 	 * ----> la case de devant 
 	 * ----> la case +2 par rapport a la depart 
