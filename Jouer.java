@@ -2,44 +2,31 @@ import java.util.Scanner;
 
 public class Jouer
 {
-<<<<<<< HEAD
-     public static void main(String[] args)
-    {
-=======
+
     public static void main(String[] args)
     {
-
->>>>>>> 5c197def15764c332f66d35ca0958ee00a80e70c
-   /*___________Saisie générale*/
+ /*___________Saisie générale*/
         Scanner saisie = new Scanner(System.in);
-
+            
   /*____________Saisie des joueurs*/
         System.out.println("Joueur 1 : Votre nom ?");
         String j1nom = saisie.nextLine();
         Joueur j1 = new Joueur(j1nom,1);
-
+        
         System.out.println("Joueur 2 : Votre nom ?");
         String j2nom = saisie.nextLine();
         Joueur j2 = new Joueur(j2nom,0);
-<<<<<<< HEAD
-
-        System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
-        Partie pp = new Partie(j1,j2);
-=======
         
         System.out.println(j1.getPrenom()+"------> Pieces blanche" +"\n" +j2.getPrenom()+"------> Pieces noire");
         Partie pp = new Partie(j1,j2);  
->>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
   /*___________Debut Partie*/
-       /* System.out.println("Voulez vous reprendre votre partie ?(O/N)");
+      /*  System.out.println("Voulez vous reprendre votre partie ?(O/N)");
         String rep = saisie.nextLine();
         if(rep.equals("0") || rep.equals("o"))
         {
-            try
-            {
+            try {
                 pp.restaurerPartie("C:/Users/soume/eclipse-workspace/JeuDames/src/sauv.txt");
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -56,66 +43,60 @@ public class Jouer
         while(quit.equals("N") || quit.equals("n"))
         {
             Joueur j = pp.alternationJoueur(tours, j1, j2);
-<<<<<<< HEAD
-
-=======
             
->>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
-            System.out.println(j.getPrenom() + " Quel piece voulez-vous déplacer (saisir coordonnée)?");
+            System.out.println(j.getPrenom() + " Quel piece voulez-vous deplacer (saisir coordonnée)?");
             int ligi,lig;
             String posPiece,pos;
             //Boucle se répète tant qu'on a pas saisie une case contenant une Piece
             do {
                 posPiece = saisie.nextLine();
                 ligi = posPiece.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
-
+                
             //Si la case selectionné ne contient pas de piece
                 if(pp.getTerrain().etatCase(j.getChoixCase(pp.getTerrain(),ligi,posPiece.charAt(0))))
-                    System.out.println("Cette case ne contient pas de Piece, veuillez réessayer :");
-
+                    System.out.println("Cette case ne contient pas de Piece, veuillez réessayer :");    
+                
             }while(pp.getTerrain().etatCase(j.getChoixCase(pp.getTerrain(),ligi,posPiece.charAt(0))));
-
+            
             System.out.println("Position saisie -> "+posPiece+" : "+j.getChoixPiece(pp.getTerrain(),ligi,posPiece.charAt(0)));
-
-
+            
+        
         /*Case où se déplacer   */
             //Boucle se répète tant qu'on a pas saisie une case vide
-<<<<<<< HEAD
-
-=======
             
->>>>>>> 16993291398e37abdaeea5be58d3044b21378dba
             System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
             do {
-
+                
                 pos = saisie.nextLine();
                 lig = pos.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
                 if(j.getChoixPiece(pp.getTerrain(),lig,pos.charAt(0)) != null)
                     System.out.println("Cette case contient une Piece, veuillez réessayer :");
-
+                
             }while(j.getChoixPiece(pp.getTerrain(),lig,pos.charAt(0)) != null);
-
-
+            
+            
             System.out.println("Position saisie -> "+pos+" : "+j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0)));
             Case depart=j.getChoixCase(pp.getTerrain(),ligi,posPiece.charAt(0));
             Case arrive=j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0));
 
-            depart.getPiece().deplacerPieces(pp.getTerrain(),arrive);
-
-                System.out.println("Piece déplacé");
+            if(depart.getPiece().deplacerPieces(pp.getTerrain(),arrive))
+            {
+                System.out.println("Piece deplace");
                 System.out.println(pp.getTerrain().afficher());
+            }
         /*
             else
                 System.out.println("Impossible,la piece ne peux pas se déplacer");
             */
             System.out.println("Voulez vous quitter la partie ? (O/N)");
                 quit = saisie.nextLine();
-
+                
             tours++;
         }
-
+        
         System.out.println("Vous avez quitté la partie");
     }
+
 
 
 }
