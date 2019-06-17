@@ -8,18 +8,18 @@ public class Reine extends Piece
 	{
 		super();
 		if(this.getCouleur() == 0)		// si la pièce est noire
-			this.forme = "D";
+			this.forme = "\u265B";
 		else							// si la pièce est blanche
-			this.forme = "D";
+			this.forme = "\u2655";
 	}
 
 	public Reine(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
-			this.forme = "D";			// si la pièce est noire
+			this.forme = "\u265B";			// si la pièce est noire
 		else
-			this.forme = "D";			// si la pièce est blanche
+			this.forme = "\u2655";			// si la pièce est blanche
 	}
 
 	public String getForme()

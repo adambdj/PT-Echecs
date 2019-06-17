@@ -11,11 +11,11 @@ public class Cavalier  extends Piece
 		super();
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "C";					// si la pièce est noire
+			this.forme = "\u265E";					// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "C";					// si la pièce est blanche
+			this.forme = "\u2658";					// si la pièce est blanche
 		}
 	}
 
@@ -24,11 +24,11 @@ public class Cavalier  extends Piece
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "C";					// si la pièce est noire
+			this.forme = "\u265E";					// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "C";					// si la pièce est blanche
+			this.forme = "\u2658";					// si la pièce est blanche
 		}
 	}
 

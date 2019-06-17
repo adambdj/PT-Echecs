@@ -10,11 +10,11 @@ public class Tour extends Piece
 		super();
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "T";					// si la pièce est noire
+			this.forme = "\u265C";					// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "T";					// si la pièce est blanche
+			this.forme = "\u2656";					// si la pièce est blanche
 		}
 
 	}
@@ -23,11 +23,11 @@ public class Tour extends Piece
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
 		{
-			this.forme = "T";					// si la pièce est noire
+			this.forme = "\u265C";					// si la pièce est noire
 		}
 		else
 		{
-			this.forme = "T";					// si la pièce est blanche
+			this.forme = "\u2656";					// si la pièce est blanche
 		}
 	}
 

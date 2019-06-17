@@ -10,18 +10,18 @@ public class Roi  extends Piece
 	{
 		super();
 		if(this.getCouleur() == 0)
-			this.forme = "R";				// si la pièce est noire
+			this.forme = "\u265A";				// si la pièce est noire
 		else
-			this.forme = "R";				// si la pièce est blanche
+			this.forme = "\u2654";				// si la pièce est blanche
 	}
 
 	public Roi(int ligne, int colonne, int coul)
 	{
 		super(ligne,colonne,coul);
 		if(this.getCouleur() == 0)
-			this.forme = "R";				// si la pièce est noire
+			this.forme = "\u265A";				// si la pièce est noire
 		else
-			this.forme = "R";				// si la pièce est blanche
+			this.forme = "\u2654";				// si la pièce est blanche
 	}
 
 	public String getForme()
