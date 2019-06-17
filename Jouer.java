@@ -8,26 +8,30 @@ public class Jouer
         Scanner saisie = new Scanner(System.in);
 
   /*____________Saisie des joueurs*/
-        System.out.println("Joueur 1 : Votre nom ?");
-        String j1nom = saisie.nextLine();
-        Joueur j1 = new Joueur(j1nom,1);
 
-        System.out.println("Joueur 2 : Votre nom ?");
-        String j2nom = saisie.nextLine();
-        Joueur j2 = new Joueur(j2nom,0);
 
-        Partie p = new Partie(j1,j2);
-        int tours = 2;
-        while(tours != 0)
-        {
-          if (tours %2 == 0)
-            p.tourDeJeu(j1,tours);
-          p.tourDeJeu(j2,tours);
-          p.alternationJoueur(tours,j1,j2);
-          tours++;
-        }
+    //    Partie p = new Partie();
+      //  p.menu();
+        //System.out.println("Vous avez quitté la partie");
+        /*      demo:
+        - Deplacement Piece
+        - Manger piece
+        - Sauvegarde partie
+        - Echec
+        */
 
-        System.out.println("Vous avez quitté la partie");
+
+        /*Demo deplacer Pieces echec
+        Echiquier e = new Echiquier(false);
+        Case depart = e.getCase(4,2);
+        Case arrive  = e.getCase(2,4);
+
+        e.setCase(depart, new Fou(4,2,0));
+        e.setCase(arrive, new Pion(2,4,1));
+        System.out.println(e.afficher());
+        depart.getPiece().deplacerPieces(e,arrive);
+        System.out.println(e.afficher());
+        */
     }
 
 
