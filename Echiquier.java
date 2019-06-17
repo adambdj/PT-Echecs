@@ -4,6 +4,7 @@ import java.io.*;
 public class Echiquier
 {
 	private Case[][] grille;
+	ArrayList<Piece> listeEnnemie = new ArrayList<Piece>();
 
 	public Echiquier()
 	{
@@ -127,6 +128,44 @@ public class Echiquier
 			}
 		}
 		return s;
+	}
+
+	public ArrayList<Piece> pritPour(Piece victime)
+	{
+		if(victime.getCouleur() == 0) {
+		
+			for(int i = 0; i < 8; i++){
+				for(int j = 0; j < 8; j++){
+					if(!(this.etatCase(this.getCase(i, j))))
+						if(this.getCase(i, j).getPiece().getCouleur() == 1) 
+							this.listeEnnemie.add(this.getCase(i, j).getPiece());
+				}
+			}
+		}
+		else if(victime.getCouleur() == 1)
+		{
+			for(int i = 0; i < 8; i++){
+				for(int j = 0; j < 8; j++){
+					if(!(this.etatCase(this.getCase(i, j))))
+						if(this.getCase(i, j).getPiece().getCouleur() == 0)
+							this.listeEnnemie.add(this.getCase(i, j).getPiece());
+						
+				}
+			}
+		}
+		
+		return this.listeEnnemie;
+	}
+	
+	public boolean enEchec(Piece cible)
+	{
+		this.pritPour(cible);
+		for(int i = 0; i<this.listeEnnemie.size(); i++) 
+			if(this.listeEnnemie.get(i).verifDeplacement(this, this.getCase(cible.getPosX(),cible.getPosY())))
+				{
+				System.out.println(this.listeEnnemie.get(i));
+				return true;}
+		return false;
 	}
 
 	public void effacerEchiquier()
