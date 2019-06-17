@@ -137,9 +137,11 @@ public class Partie
 
 	public void tourDeJeu(Joueur j, int tours)
 	{
+		Scanner saisie = new Scanner(System.in);
 		int coul;
 		int coulChoix = 2;
 		Piece choix;
+		System.out.println(this.getTerrain().afficher());
 		System.out.println(j.getPrenom() + ", quelle pièce voulez-vous déplacer? (saisir coordonnées)");
 		int ligi,lig;
 		String posPiece,pos;
