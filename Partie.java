@@ -4,9 +4,12 @@ import java.io.*;
 import java.util.*;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Scanner;
+
 
 public class Partie
 {
+	Scanner saisie = new Scanner(System.in);
 	private Echiquier terrain; //Une Partie est composé d'un Echequier
 	private Joueur joueur1;
 	private Joueur joueur2;
@@ -132,8 +135,56 @@ public class Partie
 	{
 	}
 
-	public void tourDeJeu()
+	public void tourDeJeu(Joueur j, int tours)
 	{
+		int coul;
+		int coulChoix = 2;
+		Piece choix;
+		System.out.println(j.getPrenom() + ", quelle pièce voulez-vous déplacer? (saisir coordonnées)");
+		int ligi,lig;
+		String posPiece,pos;
+		//Boucle se répète tant qu'on a pas saisie une case contenant une Piece
+		do
+		{
+				posPiece = saisie.nextLine();
+				ligi = posPiece.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
+
+		//Si la case selectionné ne contient pas de piece
+				if(this.getTerrain().etatCase(j.getChoixCase(this.getTerrain(),ligi,posPiece.charAt(0))))
+						System.out.println("Cette case ne contient pas de Pièce, veuillez réessayer :");
+
+		}while(this.getTerrain().etatCase(j.getChoixCase(this.getTerrain(),ligi,posPiece.charAt(0))));
+
+		System.out.println("Position saisie -> "+posPiece+" : "+j.getChoixPiece(this.getTerrain(),ligi,posPiece.charAt(0)));
+		Case cD = j.getChoixCase(this.getTerrain(),ligi,posPiece.charAt(0));
+		int coulChoixD = cD.getPiece().getCouleur();
+		/*Case où se déplacer   */
+				//Boucle se répète tant qu'on a pas saisie une case vide
+
+		System.out.println(j.getPrenom() + " où voulez vous vous déplacer?");
+		do {
+				pos = saisie.nextLine();
+				lig = pos.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
+				choix = j.getChoixPiece(this.getTerrain(),lig,pos.charAt(0));
+				if (choix != null ) {
+					coulChoix = choix.getCouleur();
+				}
+
+				if(coulChoix == coulChoixD)
+						System.out.println("Cette case contient une Piece, veuillez réessayer :");
+
+		}while(coulChoix == coulChoixD);
+
+
+		System.out.println("Position saisie -> "+pos+" : "+j.getChoixCase(this.getTerrain(),lig,pos.charAt(0)));
+
+		Case depart=j.getChoixCase(this.getTerrain(),ligi,posPiece.charAt(0));
+		Case arrive=j.getChoixCase(this.getTerrain(),lig,pos.charAt(0));
+		System.out.println(depart.getPosX() + " et : " + depart.getPosY());
+		System.out.println(arrive.getPosX() + " et : " + arrive.getPosY());
+		depart.getPiece().deplacerPieces(this.getTerrain(),arrive);
+		System.out.println("Piece déplacé");
+		System.out.println(this.getTerrain().afficher());
 	}
 
 	public Echiquier getTerrain()
