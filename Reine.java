@@ -48,16 +48,18 @@ public class Reine extends Piece
 	
 public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
 	{
-			int i = arrive.getPosX();
+				int i = arrive.getPosX();
 			int j = arrive.getPosY();
 			if(depart.getPosX()>i && depart.getPosY()<j)  //en haut a droite
 			{
 				int x = depart.getPosX() - 1;
 				int y = depart.getPosY() + 1;
-		
+				
+				if(!(e.getCase(x, y).estVide())) 
+					return false;
+				
 				while(x > i && y < j)
 				{
-					
 					if (!(e.etatCase(e.getCase(x,y)) ))
 						return false;
 					x = x - 1;
@@ -66,7 +68,9 @@ public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
 			}
 			else if(depart.getPosX()>i && depart.getPosY()>j) {//en haut a gauceh
 				int x = depart.getPosX() - 1;
-				int y = depart.getPosY() - 1;	
+				int y = depart.getPosY() - 1;
+				if(!(e.getCase(x, y).estVide())) 
+					return false;
 				
 				while(x > i && y > j)
 				{
@@ -80,7 +84,9 @@ public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
 			}
 			else if (depart.getPosX()<i && depart.getPosY()>j) {//en bas a gauche
 				int x = depart.getPosX() + 1;
-				int y = depart.getPosY() - 1;					
+				int y = depart.getPosY() - 1;	
+				if(!(e.getCase(x, y).estVide())) 
+					return false;
 				while(x < i && y > j)
 				{
 					if (!(e.etatCase(e.getCase(x,y)) ))
@@ -94,6 +100,8 @@ public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
 				int x = depart.getPosX() + 1;
 				int y = depart.getPosY() + 1;
 				
+				if(!(e.getCase(x, y).estVide())) 
+					return false;
 				while(x < i && y < j)
 				{
 					if (!(e.etatCase(e.getCase(x,y)) ))
@@ -105,6 +113,7 @@ public boolean boucleDiagonale(Echiquier e,Case depart, Case arrive)
 			}
 			
 			if(super.memeCouleur(depart, arrive))
+
 				return false;
 		
 		return true;
