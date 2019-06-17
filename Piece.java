@@ -17,11 +17,16 @@ public abstract class Piece
 
     public boolean deplacerPieces(Echiquier e,Case arrive){
     Case depart = e.getCase(this.x, this.y);
-    
+    System.out.println(depart.getPosX() + " et : " + depart.getPosY());
+    System.out.println(arrive.getPosX() + " et : " + arrive.getPosY());
+    System.out.println(depart.getPiece().verifDeplacement(e,arrive));
     if(depart.getPiece().verifDeplacement(e,arrive)) {
+          System.out.println("entre du if 1");
           e.setCase(arrive, depart.getPiece());
+          System.out.println(e.getCase(arrive.getPosX(),arrive.getPosY()));
           depart.setPiece(null);
-          return true;   
+          System.out.println(e.getCase(depart.getPosX(),depart.getPosX()));
+          return true;
       }
     return false;
   }
@@ -32,7 +37,7 @@ public abstract class Piece
         return true;
     return false;
   }
- 
+
 
   public boolean verifDeplacement(Echiquier e, Case arrive)
   {

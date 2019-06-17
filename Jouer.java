@@ -37,11 +37,15 @@ ______________Terrain*/
 
 /*____________Saisie des déplacements*/
     /*Piece a déplacer*/
-        int tours = 1;
+        int tours = 0;
         String quit ="N";
+        Joueur j;
+        int coul;
+        int coulChoix = 2;
+        Piece choix;
         while(quit.equals("N") || quit.equals("n"))
         {
-            Joueur j = pp.alternationJoueur(tours, j1, j2);
+            j = pp.alternationJoueur(tours, j1, j2);
 
             System.out.println(j.getPrenom() + ", quelle pièce voulez-vous déplacer? (saisir coordonnées)");
             int ligi,lig;
@@ -69,20 +73,32 @@ ______________Terrain*/
 
                 pos = saisie.nextLine();
                 lig = pos.charAt(1)-'0'; //-'0' : pour que le char se transforme en int
-                if(j.getChoixPiece(pp.getTerrain(),lig,pos.charAt(0)) != null)
+                choix = j.getChoixPiece(pp.getTerrain(),lig,pos.charAt(0));
+                if (choix != null ) {
+                  coulChoix = choix.getCouleur();
+                }
+                if (tours %2 == 0) {
+                  System.out.println(choix);
+                   coul = 0;
+                }
+                else
+                   coul = 1;
+                System.out.println("tour " + tours + " couleur " + coul + " choixCoul " + coulChoix);
+                if(choix != null || coulChoix == coul)
                     System.out.println("Cette case contient une Piece, veuillez réessayer :");
 
-            }while(j.getChoixPiece(pp.getTerrain(),lig,pos.charAt(0)) != null);
+            }while(choix != null || coulChoix == coul);
 
 
             System.out.println("Position saisie -> "+pos+" : "+j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0)));
+
             Case depart=j.getChoixCase(pp.getTerrain(),ligi,posPiece.charAt(0));
             Case arrive=j.getChoixCase(pp.getTerrain(),lig,pos.charAt(0));
-
+            System.out.println(depart.getPosX() + " et : " + depart.getPosY());
+            System.out.println(arrive.getPosX() + " et : " + arrive.getPosY());
             depart.getPiece().deplacerPieces(pp.getTerrain(),arrive);
-
-                System.out.println("Piece déplacé");
-                System.out.println(pp.getTerrain().afficher());
+            System.out.println("Piece déplacé");
+            System.out.println(pp.getTerrain().afficher());
         /*
             else
                 System.out.println("Impossible,la piece ne peux pas se déplacée");
